@@ -21,7 +21,7 @@ const Hero = () => {
           <p className={hero_left_p}>collections</p>
           <p className={hero_left_p}>for everyone</p>
         </div>
-        <div className="hero-latest-btn flex justify-center items-center gap-3.5 w-72 h-16 rounded-[100%] mt-7 bg-[#ff4141] text-white text-2xl font-medium cursor-pointer">
+        <div className="hero-latest-btn flex justify-center items-center gap-3.5 w-72 h-16 rounded-full mt-7 bg-[#ff4141] text-white text-2xl font-medium cursor-pointer">
           <div>Last Collection</div>
           <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
         </div>
