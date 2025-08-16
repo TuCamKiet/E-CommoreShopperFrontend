@@ -16,10 +16,10 @@ const Navbar = () => {
       <div className="nav-logo flex items-center gap-x-px cursor-pointer">
         <img
           src={shopping_bag}
-          className="h-[clamp(32px,10vmin,100px)] w-auto"
+          className="h-[clamp(32px,10vmin,100px)]"
           alt="logo"
         />
-        <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] hidden sm:block font-semibold">
+        <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] w-0 overflow-hidden sm:w-fit font-semibold">
           SHOPPER
         </span>
       </div>
