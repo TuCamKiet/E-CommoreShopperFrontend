@@ -19,7 +19,7 @@ const Navbar = () => {
           className="h-[clamp(32px,10vmin,100px)] object-contain p-0"
           alt="logo"
         />
-        <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] max-sm:hidden font-semibold">
+        <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] hidden sm:flex font-semibold">
           SHOPPER
         </span>
       </div>

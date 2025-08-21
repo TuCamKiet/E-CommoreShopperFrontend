@@ -195,6 +195,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
@@ -438,6 +441,16 @@
   }
   .max-sm\:hidden {
     @media (width < 40rem) {
+      display: none;
+    }
+  }
+  .sm\:flex {
+    @media (width >= 40rem) {
+      display: flex;
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
       display: none;
     }
   }
