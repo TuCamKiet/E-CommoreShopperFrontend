@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="nav-logo flex items-center gap-x-px cursor-pointer">
         <img
           src={shopping_bag}
-          className="h-[clamp(32px,10vmin,100px)] w-auto p-0"
+          className="h-[clamp(32px,10vmin,100px)] object-contain p-0"
           alt="logo"
         />
         <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] max-sm:hidden font-semibold">
