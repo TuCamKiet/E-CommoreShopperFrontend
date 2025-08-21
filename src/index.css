@@ -574,6 +574,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -855,6 +859,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:flex {
+    display: flex;
+  }
+
   .sm\:w-fit {
     width: -webkit-fit-content;
     width: fit-content;
