@@ -5,7 +5,7 @@ import hero_img from "../Assets/hero_img.png";
 const Hero = () => {
   const hero_left_p = "text-[#171717] text-8xl font-extrabold";
   return (
-    <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex min-h-screen select-none">
+    <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex min-h-screen ">
       <div className="hero-left flex flex-col flex-1 justify-center gap-5 leading-none pl-[5vw]">
         <h1 className="text-[#090909] text-2xl font-semibold">
           NEW ARRIVALS ONLY
@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-right flex flex-1 items-center justify-center max-sm:hidden">
-        <img src={hero_img} alt="hero" className="object-contain" />
+        <img src={hero_img} alt={hero_img} className="object-contain" />
       </div>
     </div>
   );
