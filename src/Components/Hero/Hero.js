@@ -6,7 +6,7 @@ const Hero = () => {
   const hero_left_p = "text-[#171717] text-8xl font-extrabold";
   return (
     <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex min-h-screen select-none">
-      <div className="hero-left flex flex-col flex-1 justify-center gap-5 pl-44 leading-none">
+      <div className="hero-left flex flex-col flex-1 justify-center gap-5 leading-none border-[0.1px] pl-[4vw]">
         <h1 className="text-[#090909] text-2xl font-semibold">
           NEW ARRIVALS ONLY
         </h1>
@@ -26,8 +26,8 @@ const Hero = () => {
           <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
         </div>
       </div>
-      <div className="hero-right flex flex-1 items-center justify-center">
-        <img src={hero_img} alt="hero" className="" />
+      <div className="hero-right flex flex-1 items-center justify-center max-sm:hidden border-[0.1px]">
+        <img src={hero_img} alt="hero" className="object-contain" />
       </div>
     </div>
   );
