@@ -12,7 +12,7 @@ const Navbar = () => {
   const nav_menu_hr = "border-none w-[80%] h-[2px] rounded-xl bg-[#FF4141]";
 
   return (
-    <div className="navbar sticky top-0 z-50 bg-[#fde1ff] flex justify-between p-[max(2px,1vh)] shadow-[0_1px_3px_-2px_black] min-w-fit">
+    <div className="navbar sticky top-0 z-50 bg-[#fde1ff] flex w-full justify-between p-[max(2px,1vh)] shadow-[0_1px_3px_-2px_black]">
       <div className="nav-logo flex items-center gap-x-px cursor-pointer">
         <img
           src={shopping_bag}

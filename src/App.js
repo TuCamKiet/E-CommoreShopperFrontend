@@ -8,7 +8,7 @@ import { LoginSignup } from "./Pages/LoginSignup";
 
 function App() {
   return (
-    <div className="min-w-fit w-full min-h-screen h-full flex flex-col select-none">
+    <div className="min-w-fit w-full min-h-screen h-full flex flex-col items-center select-none">
       <BrowserRouter>
         <Navbar />
         <Routes>

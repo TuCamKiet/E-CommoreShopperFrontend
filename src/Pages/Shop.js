@@ -5,7 +5,7 @@ import { Offers } from "../Components/Offers/Offers";
 
 const Shop = () => {
   return (
-    <div>
+    <div className="w-full">
       <Hero />
       <Popular />
       <Offers />

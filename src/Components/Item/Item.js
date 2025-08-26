@@ -2,7 +2,7 @@ import React from "react";
 
 const Item = ({ item }) => {
   return (
-    <div className="item w-80 transition-transform duration-[600ms] hover:scale-105 w-52 cursor-pointer">
+    <div className="item flex-none w-80 transition-transform duration-[600ms] hover:scale-105 cursor-pointer">
       <img src={item.image} alt={item.image} className="w-full object-cover" />
       <p className="mt-1">{item.name}</p>
       <div className="item-prices flex gap-5">
