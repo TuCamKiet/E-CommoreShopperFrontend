@@ -39,12 +39,18 @@ const Popular = () => {
   }, []);
 
   return (
-    <div className="popular flex flex-col items-center gap-2 h-fit">
-      <h1 r className="text-[#171717] text-5xl font-semibold">
+    <div className="popular flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit">
+      <h1
+        r
+        className="text-[#171717] text-[clamp(2rem,20vmin,3rem)] font-semibold"
+      >
         POPULAR IN WOMEN
       </h1>
-      <hr className="w-48 h-1 rounded-lg border-2 border-[#252525] bg-[#252525]" />
-      <div className="popular-item mt-12 flex gap-7" ref={containerRef}>
+      <hr className="w-[clamp(8rem,80vmin,12rem)] h-[clamp(0.16rem,1.67vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
+      <div
+        className="popular-item mt-[clamp(2rem,20vmin,3rem)] flex gap-[clamp(0.116rem,11.6vmin,1.75rem)]"
+        ref={containerRef}
+      >
         {data_product &&
           data_product.slice(0, visibleItems).map((item, i) => {
             return (
