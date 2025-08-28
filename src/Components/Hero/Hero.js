@@ -4,7 +4,7 @@ import hero_img from "../Assets/hero_img.png";
 
 const Hero = () => {
   const hero_left_p =
-    "text-[#171717] text-[clamp(1rem,10vmin,6rem)] font-extrabold";
+    "text-[#171717] text-[clamp(1.5rem,15vmin,6rem)] font-extrabold";
   return (
     <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex w-full pt-[clamp(0.415rem,4.15vmin,1.25rem)]">
       <div className="hero-left flex flex-col flex-1 justify-center items-center">

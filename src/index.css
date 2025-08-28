@@ -948,6 +948,10 @@ video {
   line-height: 1.75rem;
 }
 
+.text-\[clamp\(1\.5rem\2c 15vmin\2c 6rem\)\] {
+  font-size: clamp(1.5rem,15vmin,6rem);
+}
+
 .font-extrabold {
   font-weight: 800;
 }
