@@ -594,6 +594,14 @@ video {
   margin-top: clamp(1rem,10vmin,3rem);
 }
 
+.mt-\[clamp\(1rem\2c 7vmin\2c 3rem\)\] {
+  margin-top: clamp(1rem,7vmin,3rem);
+}
+
+.mt-\[clamp\(0\.7rem\2c 7vmin\2c 3rem\)\] {
+  margin-top: clamp(0.7rem,7vmin,3rem);
+}
+
 .flex {
   display: flex;
 }
