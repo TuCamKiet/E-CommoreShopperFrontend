@@ -42,13 +42,13 @@ const Popular = () => {
     <div className="popular flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit">
       <h1
         r
-        className="text-[#171717] text-[clamp(2rem,20vmin,3rem)] font-semibold text-center"
+        className="text-[#171717] text-[clamp(1rem,10vmin,3rem)] font-semibold text-center"
       >
         POPULAR IN WOMEN
       </h1>
-      <hr className="w-[clamp(8rem,80vmin,12rem)] h-[clamp(0.16rem,1.67vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
+      <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
       <div
-        className="popular-item mt-[clamp(2rem,20vmin,3rem)] flex gap-[clamp(0.116rem,11.6vmin,1.75rem)]"
+        className="popular-item mt-[clamp(1rem,10vmin,3rem)] flex gap-[clamp(0.116rem,11.6vmin,1.75rem)]"
         ref={containerRef}
       >
         {data_product &&
