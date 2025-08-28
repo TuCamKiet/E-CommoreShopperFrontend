@@ -1212,6 +1212,14 @@ video {
     width: 20rem;
   }
 
+  .sm\:w-60 {
+    width: 15rem;
+  }
+
+  .sm\:w-64 {
+    width: 16rem;
+  }
+
   .sm\:gap-y-\[1vh\] {
     row-gap: 1vh;
   }
@@ -1223,7 +1231,17 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:w-80 {
+    width: 20rem;
+  }
+
   .md\:gap-x-\[2vw\] {
     column-gap: 2vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-80 {
+    width: 20rem;
   }
 }
