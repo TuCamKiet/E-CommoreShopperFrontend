@@ -7,13 +7,13 @@ const Hero = () => {
     "text-[#171717] text-[clamp(2rem,20vmin,6rem)] font-extrabold";
   return (
     <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex w-full">
-      <div className="hero-left flex flex-col flex-1 justify-center items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)] leading-none">
-        <div>
+      <div className="hero-left flex flex-col flex-1 justify-center items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)]">
+        <div className="max-sm:items-center max-sm:text-center flex flex-col">
           <h1 className="text-[#090909] text-[clamp(0.5rem,5vmin,1.5rem)] font-semibold">
             NEW ARRIVALS ONLY
           </h1>
-          <div>
-            <div className="hero-hand-icon flex items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)] ">
+          <div className="leading-none">
+            <div className="hero-hand-icon flex items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)] max-sm:justify-center">
               <p className={hero_left_p}>new</p>
               <FontAwesomeIcon
                 icon="fa-regular fa-hand-peace"

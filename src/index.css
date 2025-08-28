@@ -663,6 +663,11 @@ video {
   width: 100%;
 }
 
+.w-fit {
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
 .min-w-fit {
   min-width: -webkit-fit-content;
   min-width: fit-content;
@@ -757,6 +762,10 @@ video {
 
 .gap-y-\[2px\] {
   row-gap: 2px;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .rounded-3xl {
@@ -1009,9 +1018,25 @@ video {
   .max-sm\:hidden {
     display: none;
   }
+
+  .max-sm\:items-center {
+    align-items: center;
+  }
+
+  .max-sm\:justify-center {
+    justify-content: center;
+  }
+
+  .max-sm\:text-center {
+    text-align: center;
+  }
 }
 
 @media (min-width: 640px) {
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
   .sm\:gap-y-\[1vh\] {
     row-gap: 1vh;
   }
