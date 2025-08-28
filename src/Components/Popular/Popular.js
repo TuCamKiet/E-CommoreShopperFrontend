@@ -42,7 +42,7 @@ const Popular = () => {
     <div className="popular flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit">
       <h1
         r
-        className="text-[#171717] text-[clamp(2rem,20vmin,3rem)] font-semibold"
+        className="text-[#171717] text-[clamp(2rem,20vmin,3rem)] font-semibold text-center"
       >
         POPULAR IN WOMEN
       </h1>
