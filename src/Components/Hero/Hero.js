@@ -6,7 +6,7 @@ const Hero = () => {
   const hero_left_p =
     "text-[#171717] text-[clamp(1.5rem,15vmin,6rem)] font-extrabold";
   return (
-    <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex w-full pt-[clamp(0.415rem,4.15vmin,1.25rem)] relative">
+    <div className="hero bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] flex w-full h-fit pt-[clamp(0.415rem,4.15vmin,1.25rem)] max-sm:relative">
       <div className="hero-left flex flex-col flex-1 justify-center items-center max-sm:z-10">
         <div className="max-sm:items-center max-sm:text-center flex flex-col gap-[clamp(0.415rem,4.15vmin,1.25rem)]">
           <h1 className="text-[#090909] text-[clamp(0.5rem,5vmin,1.5rem)] font-semibold">
@@ -33,7 +33,7 @@ const Hero = () => {
         <img
           src={hero_img}
           alt={hero_img}
-          className="object-contain h-full max-sm:h-[200%] max-sm:translate-y-1/4"
+          className="object-contain max-sm:h-[200%] max-sm:translate-y-1/4"
         />
       </div>
     </div>

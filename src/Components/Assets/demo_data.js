@@ -3,7 +3,7 @@ let data_product = [
     id: 1,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg1ixwHFsnUyCPCKESCqusO7tIRr_y9ie7Vw&s",
+      "https://img.freepik.com/premium-photo/full-body-portrait-female-fashion-model-sitting-isolated_118342-10273.jpg",
     new_price: 50.0,
     old_price: 80.5,
   },
