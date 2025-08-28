@@ -671,6 +671,14 @@ video {
   width: 100%;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
 .min-w-fit {
   min-width: -webkit-fit-content;
   min-width: fit-content;
@@ -773,6 +781,22 @@ video {
 
 .gap-\[clamp\(0\.4rem\2c 4vmin\2c 2rem\)\] {
   gap: clamp(0.4rem,4vmin,2rem);
+}
+
+.gap-\[clamp\(1rem\2c 10vmin\2c 1\.75rem\)\] {
+  gap: clamp(1rem,10vmin,1.75rem);
+}
+
+.gap-\[clamp\(0\.116rem\2c 10vmin\2c 1\.75rem\)\] {
+  gap: clamp(0.116rem,10vmin,1.75rem);
+}
+
+.gap-\[clamp\(0\.9rem\2c 9vmin\2c 1\.75rem\)\] {
+  gap: clamp(0.9rem,9vmin,1.75rem);
+}
+
+.gap-\[clamp\(0\.7rem\2c 7vmin\2c 1\.75rem\)\] {
+  gap: clamp(0.7rem,7vmin,1.75rem);
 }
 
 .gap-x-\[2px\] {

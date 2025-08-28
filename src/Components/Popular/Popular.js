@@ -48,7 +48,7 @@ const Popular = () => {
       </h1>
       <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
       <div
-        className="popular-item mt-[clamp(0.7rem,7vmin,3rem)] flex gap-[clamp(0.116rem,11.6vmin,1.75rem)]"
+        className="popular-item mt-[clamp(0.7rem,7vmin,3rem)] flex gap-[clamp(0.7rem,7vmin,1.75rem)]"
         ref={containerRef}
       >
         {data_product &&
