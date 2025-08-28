@@ -11,7 +11,7 @@ const Offers = () => {
         <p className="text-[#171717] text-xl font-semibold">
           ONLY ON BEST SELLERS PRODUCTS
         </p>
-        <button className="w-64 h-16 rounded-3xl bg-[#ff4141] border-none text-white text-xl font-medium mt-7 cursor-pointer">
+        <button className="w-64 h-16 rounded-full bg-[#ff4141] border-none text-white text-xl font-medium mt-7 cursor-pointer">
           Check Now
         </button>
       </div>

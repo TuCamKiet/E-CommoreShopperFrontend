@@ -72,7 +72,7 @@ const Navbar = () => {
       <div className=" nav-login-cart flex items-center md:gap-x-[2vw] gap-x-[2px]">
         <Link style={{ textDecoration: "none" }} to="/login">
           <button
-            className="px-[2vw] sm:py-[2vh] py-[3px] outline-none border-[1px] border-[#7a7a7a] rounded-[1vmax] text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
+            className="px-[2vw] sm:py-[2vh] py-[3px] outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer leading-snug bg-white
         active:bg-[#f3f3f3]"
           >
             Login

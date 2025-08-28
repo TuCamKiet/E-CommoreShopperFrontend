@@ -5,7 +5,7 @@ import { Offers } from "../Components/Offers/Offers";
 
 const Shop = () => {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-[clamp(0.4rem,4vmin,2rem)]">
       <Hero />
       <Popular />
       <Offers />
