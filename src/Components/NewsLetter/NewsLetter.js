@@ -13,9 +13,9 @@ const NewsLetter = () => {
         <input
           type="email"
           placeholder="Your Email Here"
-          className="w-[65%] border-none outline-none text-[#616161] text-[clamp(0.5rem,5vmin,1.25rem)]"
+          className="w-[65%] border-none outline-none text-[#616161] text-[clamp(0.5rem,5vmin,1.125rem)]"
         />
-        <button className="w-[31%] h-full rounded-full bg-black text-white text-[clamp(0.5rem,5vmin,1.25rem)] cursor-pointer">
+        <button className="w-[31%] h-full rounded-full bg-black text-white text-[clamp(0.5rem,5vmin,1.125rem)] cursor-pointer">
           Subscribe
         </button>
       </div>
