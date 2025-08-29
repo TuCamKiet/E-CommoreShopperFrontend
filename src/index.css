@@ -619,6 +619,14 @@ video {
   margin-top: clamp(0.2rem,2vmin,1.5rem);
 }
 
+.mt-\[clamp\(0\.5rem\2c 4\.5vmin\2c 1\.5rem\)\] {
+  margin-top: clamp(0.5rem,4.5vmin,1.5rem);
+}
+
+.mt-\[clamp\(0\.5rem\2c 4vmin\2c 1\.5rem\)\] {
+  margin-top: clamp(0.5rem,4vmin,1.5rem);
+}
+
 .block {
   display: block;
 }
@@ -1077,6 +1085,18 @@ video {
 
 .text-\[clamp\(1rem\2c 11vmin\2c 4\.5rem\)\] {
   font-size: clamp(1rem,11vmin,4.5rem);
+}
+
+.text-\[clamp\(1rem\2c 9vmin\2c 4\.5rem\)\] {
+  font-size: clamp(1rem,9vmin,4.5rem);
+}
+
+.text-\[clamp\(1rem\2c 9\.5vmin\2c 4\.5rem\)\] {
+  font-size: clamp(1rem,9.5vmin,4.5rem);
+}
+
+.text-\[clamp\(1rem\2c 9\.2vmin\2c 4\.5rem\)\] {
+  font-size: clamp(1rem,9.2vmin,4.5rem);
 }
 
 .font-extrabold {
