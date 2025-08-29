@@ -69,10 +69,10 @@ const Navbar = () => {
           {menu === "kids" ? <hr className={nav_menu_hr} /> : ""}
         </li>
       </ul>
-      <div className=" nav-login-cart flex items-center md:gap-x-[2vw] gap-x-[2px]">
+      <div className=" nav-login-cart flex items-center md:gap-x-[2vw] gap-x-[2px] max-sm:gap-x-[2vw]">
         <Link style={{ textDecoration: "none" }} to="/login">
           <button
-            className="px-[2vw] sm:py-[2vh] py-[3px] outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer leading-snug bg-white
+            className="px-[2.2vmin] py-[1vmin]  outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
         active:bg-[#f3f3f3]"
           >
             Login
@@ -84,7 +84,7 @@ const Navbar = () => {
               icon="fa-solid fa-cart-shopping"
               className="text-[clamp(12px,4vw,32px)]"
             />
-            <span className="nav-cart-count absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 bg-[#ff4141] text-white font-medium rounded-full px-[10%] text-[clamp(9px,2vw,20px)]">
+            <span className="nav-cart-count absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 bg-red-500 text-white font-medium rounded-full px-[10%] text-[clamp(9px,2vw,20px)]">
               0
             </span>
           </div>
