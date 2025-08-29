@@ -2,20 +2,20 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="newsletter w-2/3 h-[40vh] flex flex-col items-center justify-center m-auto pr-32 mb-36 bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)] gap-7">
-      <h1 className="text-[#454545] text-5x font-semibold">
+    <div className="newsletter h-fit flex flex-col items-center justify-center text-center pt-[clamp(0.415rem,4.15vmin,1.25rem)] px-[clamp(1.5rem,9vmin,6rem)] gap-[clamp(0.5rem,5vmin,1.75rem)] sm:leading-normal leading-none border-2 border-red-500 bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)]">
+      <h1 className="text-[#454545] text-[clamp(1rem,10vmin,3rem)] font-semibold">
         Get Exclusive Offers On Your Email
       </h1>
-      <p className="text-[#454545] text-xl">
+      <p className="text-[#454545] text-[clamp(0.5rem,5vmin,1.25rem)]">
         Subscribe to our newsletter and stay updated
       </p>
-      <div className="flex items-center justify-between bg-white w-[45rem] h-16 rounded-full border-2 border-[#e3e3e3]">
+      <div className="flex items-center justify-end bg-white w-[clamp(14rem,80vmin,45rem)] h-[clamp(1.4rem,14.3vmin,4rem)] rounded-full border-2 border-[#e3e3e3]">
         <input
           type="email"
           placeholder="Your Email id"
-          className="w-[30rem] ml-7 border-none outline-none text-[#616161] text-base"
+          className="w-[65%] border-none outline-none text-[#616161] text-[clamp(0.5rem,5vmin,1.25rem)]"
         />
-        <button className="w-52 h-16 rounded-full bg-black text-white text-base cursor-pointer">
+        <button className="w-[31%] h-full rounded-full bg-black text-white text-[clamp(0.5rem,5vmin,1.25rem)] cursor-pointer">
           Subscribe
         </button>
       </div>

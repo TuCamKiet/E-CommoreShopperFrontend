@@ -7,7 +7,7 @@ import { NewsLetter } from "../Components/NewsLetter/NewsLetter";
 
 const Shop = () => {
   return (
-    <div className="w-full flex flex-col gap-[clamp(0.4rem,4vmin,2rem)]">
+    <div className="w-full flex flex-col gap-[clamp(1rem,8vmin,4rem)] items-center">
       <Hero />
       <Popular />
       <Offers />
