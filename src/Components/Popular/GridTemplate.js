@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Item } from "../Item/Item";
 
 const GridTemplate = ({
@@ -10,10 +10,11 @@ const GridTemplate = ({
 }) => {
   const containerRef = useRef(null);
   const itemRef = useRef(null);
-  const [visibleItems, setVisibleItems] = useState(1);
-  const [gridCols, setGridCols] = useState(null);
+  const [visibleItemsPerRow, setVisibleItemsPerRow] = useState(1);
 
-  useEffect(() => {
+  //useEffect: Chạy sau khi React đã render và paint DOM ra màn hình
+  //useLayoutEffect: Chạy ngay sau khi DOM đã được cập nhật nhưng trước khi browser paint ra màn hình (tránh vấn đề itemWidth = 0 khi data chưa load kịp)
+  useLayoutEffect(() => {
     const calcItemsPerRow = () => {
       if (containerRef.current && itemRef.current && data) {
         // width của 1 item
@@ -23,20 +24,14 @@ const GridTemplate = ({
         const style = window.getComputedStyle(containerRef.current);
         const gap = parseInt(style.gap) || 0;
 
-        const newVisibleItems =
+        const newVisibleItemsPerRow =
           Math.min(
             Math.floor(window.innerWidth / (itemWidth + gap)),
-            Math.floor(data.length / 2)
+            Math.floor(data.length)
           ) || 1;
 
-        setVisibleItems((prev) => {
-          if (prev !== newVisibleItems) {
-            setGridCols({
-              display: "grid",
-              gridTemplateColumns: `repeat(${newVisibleItems}, 1fr)`,
-            });
-            return newVisibleItems;
-          }
+        setVisibleItemsPerRow((prev) => {
+          if (prev !== newVisibleItemsPerRow) return newVisibleItemsPerRow;
           return prev;
         });
       }
@@ -48,7 +43,7 @@ const GridTemplate = ({
     return () => {
       window.removeEventListener("resize", calcItemsPerRow);
     };
-  }, []);
+  }, [data]);
 
   return (
     <div
@@ -59,12 +54,14 @@ const GridTemplate = ({
       </h1>
       <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
       <div
-        className={`${itemClassName} mt-[clamp(0.7rem,7vmin,3rem)] gap-[clamp(0.7rem,7vmin,1.75rem)]`}
-        style={gridCols}
+        className={`${itemClassName} mt-[clamp(0.7rem,7vmin,3rem)] grid gap-[clamp(0.7rem,7vmin,1.75rem)]`}
+        style={{
+          gridTemplateColumns: `repeat(${visibleItemsPerRow}, 1fr)`,
+        }}
         ref={containerRef}
       >
         {data &&
-          data.slice(0, visibleItems * maxRow).map((item, i) => {
+          data.slice(0, visibleItemsPerRow * maxRow).map((item, i) => {
             return (
               <div key={i} ref={i === 0 ? itemRef : null}>
                 <Item key={i} id={item.id} item={item} />
