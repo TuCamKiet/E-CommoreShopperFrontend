@@ -969,6 +969,11 @@ video {
   padding-right: clamp(1.5rem,13vmin,9rem);
 }
 
+.px-\[clamp\(1\.25rem\2c 9vmin\2c 6rem\)\] {
+  padding-left: clamp(1.25rem,9vmin,6rem);
+  padding-right: clamp(1.25rem,9vmin,6rem);
+}
+
 .pt-\[1\.5vmin\] {
   padding-top: 1.5vmin;
 }

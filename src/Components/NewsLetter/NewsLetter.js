@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="newsletter h-fit flex flex-col items-center justify-center text-center pt-[clamp(0.415rem,4.15vmin,1.25rem)] px-[clamp(1.5rem,9vmin,6rem)] gap-[clamp(0.5rem,5vmin,1.75rem)] sm:leading-normal leading-none bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)]">
+    <div className="newsletter h-fit flex flex-col items-center justify-center text-center pt-[clamp(0.415rem,4.15vmin,1.25rem)] px-[clamp(1.25rem,9vmin,6rem)] gap-[clamp(0.5rem,5vmin,1.75rem)] sm:leading-normal leading-none bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_60%)]">
       <h1 className="text-[#454545] text-[clamp(1rem,10vmin,3rem)] font-semibold">
         Get Exclusive Offers On Your Email
       </h1>
