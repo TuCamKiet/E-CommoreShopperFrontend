@@ -1189,6 +1189,26 @@ video {
   padding-right: 2.2vmin;
 }
 
+.px-\[1vmin\] {
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+}
+
+.px-\[1\.5vmin\] {
+  padding-left: 1.5vmin;
+  padding-right: 1.5vmin;
+}
+
+.px-\[1\.3vmin\] {
+  padding-left: 1.3vmin;
+  padding-right: 1.3vmin;
+}
+
+.px-\[1\.4vmin\] {
+  padding-left: 1.4vmin;
+  padding-right: 1.4vmin;
+}
+
 .pb-1 {
   padding-bottom: 0.25rem;
 }

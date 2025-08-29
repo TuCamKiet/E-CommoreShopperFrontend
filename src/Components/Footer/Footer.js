@@ -20,7 +20,7 @@ const Footer = () => {
           SHOPPER
         </p>
       </div>
-      <ul className="footer-links flex flex-wrap justify-center items-center list-none gap-[clamp(1rem,7vmin,3rem)] text-[#252525] text-[clamp(0.4rem,4vmin,1.5rem)]">
+      <ul className="footer-links flex flex-wrap justify-center items-center list-none gap-[clamp(1rem,7vmin,3rem)] px-[1.5vmin] text-[#252525] text-[clamp(0.4rem,4vmin,1.5rem)]">
         <li className={footer_links_li}>Company</li>
         <li className={footer_links_li}>Products</li>
         <li className={footer_links_li}>Offices</li>
