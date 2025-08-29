@@ -1,9 +1,9 @@
-let data_product = [
+let demo_data = [
   {
     id: 1,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
     image:
-      "https://img.freepik.com/premium-photo/full-body-portrait-female-fashion-model-sitting-isolated_118342-10273.jpg",
+      "https://media.istockphoto.com/id/942693478/vi/anh/c%C3%B4-g%C3%A1i-tr%E1%BA%BB-xinh-%C4%91%E1%BA%B9p-trong-chi%E1%BA%BFc-v%C3%A1y-tr%E1%BA%AFng-bay-v%E1%BA%A3i-ch%E1%BA%A3y.jpg?s=612x612&w=0&k=20&c=jVdFJiZauvUGvU-ul037aBi76o4x_BoHZN5YX7X4HyI=",
     new_price: 50.0,
     old_price: 80.5,
   },
@@ -55,6 +55,30 @@ let data_product = [
     new_price: 85.0,
     old_price: 120.5,
   },
+  {
+    id: 8,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image:
+      "https://media.istockphoto.com/id/1290269328/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-m%E1%BA%B7c-v%C3%A1y-%C4%91%E1%BA%B9p-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-ph%E1%BB%91-venice.jpg?s=612x612&w=0&k=20&c=2m2zp9qxJuD2e98qJvSNrWfw7pkSLKQizUoyh9tRtHA=",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 9,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image:
+      "https://media.istockphoto.com/id/1942984031/vi/anh/fashion-model-in-studio-blonde-woman.jpg?s=612x612&w=0&k=20&c=QO223XgVL73_3dEvAKiJsniVNXSzaxCRYFiaOnkIpNE=",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 10,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image:
+      "https://media.istockphoto.com/id/904759894/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-t%E1%BB%B1-nhi%C3%AAn-xinh-%C4%91%E1%BA%B9p.jpg?s=612x612&w=0&k=20&c=crZhhJMYEYgY5u6v8nBc082nz82zqoJ6C2WfNotIRq0=",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
 ];
 
-export { data_product };
+export { demo_data };
