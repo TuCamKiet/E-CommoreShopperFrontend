@@ -8,7 +8,7 @@ import { Footer } from "../Components/Footer/Footer";
 
 const Shop = () => {
   return (
-    <div className="w-full flex flex-col gap-[clamp(1rem,8vmin,4rem)] items-center">
+    <div className="w-full flex flex-col gap-[clamp(1rem,9vmax,6rem)] items-center">
       <Hero />
       <Popular />
       <Offers />
