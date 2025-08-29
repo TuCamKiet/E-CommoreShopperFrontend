@@ -704,6 +704,14 @@ video {
   width: clamp(14rem,80vmin,55rem);
 }
 
+.w-\[clamp\(14rem\2c 100vmin\2c 55rem\)\] {
+  width: clamp(14rem,100vmin,55rem);
+}
+
+.w-\[clamp\(14rem\2c 140vmin\2c 55rem\)\] {
+  width: clamp(14rem,140vmin,55rem);
+}
+
 .min-w-fit {
   min-width: -webkit-fit-content;
   min-width: fit-content;
@@ -924,6 +932,41 @@ video {
 .py-\[3px\] {
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+.px-\[clamp\(1\.5rem\2c 9vmin\2c 7rem\)\] {
+  padding-left: clamp(1.5rem,9vmin,7rem);
+  padding-right: clamp(1.5rem,9vmin,7rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 9vmin\2c 8rem\)\] {
+  padding-left: clamp(1.5rem,9vmin,8rem);
+  padding-right: clamp(1.5rem,9vmin,8rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 10vmin\2c 8rem\)\] {
+  padding-left: clamp(1.5rem,10vmin,8rem);
+  padding-right: clamp(1.5rem,10vmin,8rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 10vmin\2c 9rem\)\] {
+  padding-left: clamp(1.5rem,10vmin,9rem);
+  padding-right: clamp(1.5rem,10vmin,9rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 15vmin\2c 9rem\)\] {
+  padding-left: clamp(1.5rem,15vmin,9rem);
+  padding-right: clamp(1.5rem,15vmin,9rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 12vmin\2c 9rem\)\] {
+  padding-left: clamp(1.5rem,12vmin,9rem);
+  padding-right: clamp(1.5rem,12vmin,9rem);
+}
+
+.px-\[clamp\(1\.5rem\2c 13vmin\2c 9rem\)\] {
+  padding-left: clamp(1.5rem,13vmin,9rem);
+  padding-right: clamp(1.5rem,13vmin,9rem);
 }
 
 .pt-\[1\.5vmin\] {

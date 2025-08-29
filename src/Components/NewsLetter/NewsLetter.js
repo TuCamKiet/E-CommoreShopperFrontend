@@ -9,10 +9,10 @@ const NewsLetter = () => {
       <p className="text-[#454545] text-[clamp(0.5rem,5vmin,1.25rem)]">
         Subscribe to our newsletter and stay updated
       </p>
-      <div className="flex items-center justify-end bg-white w-[clamp(14rem,80vmin,55rem)] h-[clamp(1.4rem,14vmin,4rem)] rounded-full border-2 border-[#e3e3e3]">
+      <div className="flex items-center justify-end bg-white w-full h-[clamp(1.4rem,14vmin,4rem)] rounded-full border-2 border-[#e3e3e3]">
         <input
           type="email"
-          placeholder="Your Email id"
+          placeholder="Your Email Here"
           className="w-[65%] border-none outline-none text-[#616161] text-[clamp(0.5rem,5vmin,1.25rem)]"
         />
         <button className="w-[31%] h-full rounded-full bg-black text-white text-[clamp(0.5rem,5vmin,1.25rem)] cursor-pointer">
