@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GridTemplate } from "../Popular/GridTemplate";
-import { demo_data } from "../Assets/demo_data";
+import { ShopContext } from "../../Context/ShopContext";
 
 const NewCollections = () => {
+  const { demo_data } = useContext(ShopContext);
+
   return (
     <>
       <GridTemplate
@@ -10,6 +12,7 @@ const NewCollections = () => {
         componentClassName={"new-collections"}
         itemClassName={"collections"}
         data={demo_data}
+        maxRow={2}
       />
     </>
   );

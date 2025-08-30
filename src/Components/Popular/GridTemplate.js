@@ -1,13 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Item } from "../Item/Item";
 
-const GridTemplate = ({
-  title,
-  componentClassName,
-  itemClassName,
-  data,
-  maxRow = 2,
-}) => {
+const GridTemplate = (props) => {
   const containerRef = useRef(null);
   const itemRef = useRef(null);
   const [visibleItemsPerRow, setVisibleItemsPerRow] = useState(1);
@@ -16,7 +10,7 @@ const GridTemplate = ({
   //useLayoutEffect: Chạy ngay sau khi DOM đã được cập nhật nhưng trước khi browser paint ra màn hình (tránh vấn đề itemWidth = 0 khi data chưa load kịp)
   useLayoutEffect(() => {
     const calcItemsPerRow = () => {
-      if (containerRef.current && itemRef.current && data) {
+      if (containerRef.current && itemRef.current && props.data) {
         // width của 1 item
         const itemWidth = itemRef.current.offsetWidth;
 
@@ -27,7 +21,7 @@ const GridTemplate = ({
         const newVisibleItemsPerRow =
           Math.min(
             Math.floor(window.innerWidth / (itemWidth + gap)),
-            Math.floor(data.length)
+            props.data.length
           ) || 1;
 
         setVisibleItemsPerRow((prev) => {
@@ -43,31 +37,33 @@ const GridTemplate = ({
     return () => {
       window.removeEventListener("resize", calcItemsPerRow);
     };
-  }, [data]);
+  }, [props.data]);
 
   return (
     <div
-      className={`${componentClassName} flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit w-full`}
+      className={`${props.componentClassName} flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit w-full`}
     >
       <h1 className="text-[#171717] text-[clamp(1rem,10vmin,3rem)] font-semibold text-center">
-        {title}
+        {props.title}
       </h1>
       <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
       <div
-        className={`${itemClassName} mt-[clamp(0.7rem,7vmin,3rem)] grid gap-[clamp(0.7rem,7vmin,1.75rem)]`}
+        className={`${props.itemClassName} mt-[clamp(0.7rem,7vmin,3rem)] grid gap-[clamp(0.7rem,7vmin,1.75rem)]`}
         style={{
           gridTemplateColumns: `repeat(${visibleItemsPerRow}, 1fr)`,
         }}
         ref={containerRef}
       >
-        {data &&
-          data.slice(0, visibleItemsPerRow * maxRow).map((item, i) => {
-            return (
-              <div key={i} ref={i === 0 ? itemRef : null}>
-                <Item key={i} id={item.id} item={item} />
-              </div>
-            );
-          })}
+        {props.data &&
+          props.data
+            .slice(0, visibleItemsPerRow * props.maxRow)
+            .map((item, i) => {
+              return (
+                <div key={i} ref={i === 0 ? itemRef : null}>
+                  <Item key={i} id={item.id} item={item} />
+                </div>
+              );
+            })}
       </div>
     </div>
   );

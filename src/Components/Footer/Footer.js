@@ -9,7 +9,7 @@ const Footer = () => {
     "flex p-[1vmin] bg-[#fbfbfb] border-2 border-[#ebebeb] cursor-pointer";
 
   return (
-    <div className="footer flex flex-col justify-center items-center gap-[clamp(0.7rem,7vmin,3rem)]">
+    <div className="footer flex flex-col justify-center items-center mt-[clamp(1rem,9vmax,6rem)] gap-[clamp(0.7rem,7vmin,3rem)]">
       <div className="footer-logo flex items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)]">
         <img
           src={shopping_bag}
@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
       <div className="footer-copyright flex flex-col items-center gap-[clamp(0.5rem,5vmin,1.75rem)] w-full mb-[clamp(0.5rem,5vmin,1.75rem)] text-[#1a1a1a] text-[clamp(0.4rem,4vmin,1.5rem)]">
         <hr className=" w-4/5 border-none rounded-full h-1 bg-[#c7c7c7]" />
-        <p>Copyright @ {new Date().getFullYear()} - All Right Reserved.</p>
+        <p>Copyright © {new Date().getFullYear()} - All Right Reserved.</p>
       </div>
     </div>
   );

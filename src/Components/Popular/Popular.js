@@ -1,8 +1,9 @@
-import React from "react";
-import { demo_data } from "../Assets/demo_data";
+import React, { useContext } from "react";
 import { GridTemplate } from "./GridTemplate";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Popular = () => {
+  const { demo_data } = useContext(ShopContext);
   return (
     <>
       <GridTemplate
@@ -10,6 +11,7 @@ const Popular = () => {
         componentClassName={"npopular"}
         itemClassName={"popular-item"}
         data={demo_data}
+        maxRow={2}
       />
     </>
   );
