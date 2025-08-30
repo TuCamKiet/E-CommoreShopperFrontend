@@ -987,6 +987,10 @@ video {
   object-fit: cover;
 }
 
+.object-fill {
+  object-fit: fill;
+}
+
 .object-center {
   object-position: center;
 }
@@ -1256,6 +1260,10 @@ video {
     height: 200%;
   }
 
+  .max-sm\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .max-sm\:items-center {
     align-items: center;
   }
@@ -1294,8 +1302,16 @@ video {
     margin-top: clamp(0.5rem,2.5vmin,1.5rem);
   }
 
+  .sm\:flex-\[2\] {
+    flex: 2;
+  }
+
   .sm\:gap-y-\[1vh\] {
     row-gap: 1vh;
+  }
+
+  .sm\:object-contain {
+    object-fit: contain;
   }
 
   .sm\:pl-\[clamp\(0\.3rem\2c 3vmin\2c 1\.25rem\)\] {
