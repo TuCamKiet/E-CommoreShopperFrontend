@@ -12,7 +12,7 @@ const ShopCategory = (props) => {
   return (
     <div className="shop-category w-full h-fit flex flex-col items-center pt-[clamp(0.5rem,1vmax,2rem)]">
       <div className="shopcategory-banner flex min-w-fit w-10/12 h-fit items-center bg-[linear-gradient(90deg,#FCDFE0,#e1ffea22_80%)] ">
-        <div className="banner-left flex flex-[2] justify-center ">
+        <div className="banner-left flex flex-1 sm:flex-[2] justify-center ">
           <div className="flex flex-col p-[clamp(0.4rem,4vmin,1.25rem)]">
             <h1 className="text-[#F67129] text-[clamp(1rem,9vmin,4.5rem)] font-semibold leading-none">
               FLAT 50% OFF
