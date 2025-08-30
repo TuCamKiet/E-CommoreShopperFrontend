@@ -610,6 +610,14 @@ video {
   margin-top: clamp(0.5rem,2.5vmin,1.5rem);
 }
 
+.mt-\[clamp\(1rem\2c 9vmax\2c 2rem\)\] {
+  margin-top: clamp(1rem,9vmax,2rem);
+}
+
+.mt-\[clamp\(0\.5rem\2c 1vmax\2c 2rem\)\] {
+  margin-top: clamp(0.5rem,1vmax,2rem);
+}
+
 .flex {
   display: flex;
 }
@@ -1059,6 +1067,10 @@ video {
 
 .pt-\[clamp\(0\.415rem\2c 4\.15vmin\2c 1\.25rem\)\] {
   padding-top: clamp(0.415rem,4.15vmin,1.25rem);
+}
+
+.pt-\[clamp\(0\.5rem\2c 1vmax\2c 2rem\)\] {
+  padding-top: clamp(0.5rem,1vmax,2rem);
 }
 
 .text-center {

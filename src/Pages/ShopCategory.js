@@ -10,7 +10,7 @@ const ShopCategory = (props) => {
   const { demo_data } = useContext(ShopContext);
 
   return (
-    <div className="shop-category w-full h-fit flex flex-col items-center">
+    <div className="shop-category w-full h-fit flex flex-col items-center pt-[clamp(0.5rem,1vmax,2rem)]">
       <div className="shopcategory-banner flex min-w-fit w-10/12 h-fit items-center bg-[linear-gradient(90deg,#FCDFE0,#e1ffea22_80%)] ">
         <div className="banner-left flex flex-[2] justify-center ">
           <div className="flex flex-col p-[clamp(0.4rem,4vmin,1.25rem)]">

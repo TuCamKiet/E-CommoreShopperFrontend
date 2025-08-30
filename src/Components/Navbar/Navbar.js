@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar sticky top-0 z-50 bg-[#fde1ff] flex w-full min-w-fit justify-between p-[max(2px,1vh)] shadow-[0_1px_3px_-2px_black]">
-      <div className="nav-logo flex items-center gap-x-px cursor-pointer">
+      <div className="nav-logo flex flex-none items-center gap-x-px cursor-pointer">
         <img
           src={shopping_bag}
           className="h-[clamp(32px,10vmin,100px)] object-contain p-0"
@@ -23,7 +23,7 @@ const Navbar = () => {
           SHOPPER
         </span>
       </div>
-      <ul className=" nav-menu flex items-center list-none gap-x-[2vw] text-[#626262] text-[clamp(12px,4vw,30px)] font-medium">
+      <ul className=" nav-menu flex flex-1 items-center justify-center list-none gap-x-[2vw] text-[#626262] text-[clamp(12px,4vw,30px)] font-medium">
         <li
           className={nav_menu_li}
           onClick={() => {
