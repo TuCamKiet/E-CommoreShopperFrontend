@@ -9,7 +9,7 @@ const Footer = () => {
     "flex p-[1vmin] bg-[#fbfbfb] border-2 border-[#ebebeb] cursor-pointer";
 
   return (
-    <div className="footer flex flex-col justify-center items-center mt-[clamp(1rem,9vmax,6rem)] gap-[clamp(0.7rem,7vmin,3rem)]">
+    <div className="footer flex flex-col w-full justify-center items-center mt-[clamp(1rem,12vmax,8.5rem)] gap-[clamp(0.7rem,7vmin,3rem)]">
       <div className="footer-logo flex items-center gap-[clamp(0.415rem,4.15vmin,1.25rem)]">
         <img
           src={shopping_bag}

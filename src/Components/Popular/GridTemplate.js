@@ -43,10 +43,14 @@ const GridTemplate = (props) => {
     <div
       className={`${props.componentClassName} flex flex-col items-center gap-[clamp(0.33rem,3.3vmin,0.5rem)] h-fit w-full`}
     >
-      <h1 className="text-[#171717] text-[clamp(1rem,10vmin,3rem)] font-semibold text-center">
-        {props.title}
-      </h1>
-      <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
+      {props.title && (
+        <>
+          <h1 className="text-[#171717] text-[clamp(1rem,10vmin,3rem)] font-semibold text-center">
+            {props.title}
+          </h1>
+          <hr className="w-[clamp(4rem,40vmin,12rem)] h-[clamp(0.1rem,1vmin,0.25rem)] rounded-full border-2 border-[#252525] bg-[#252525]" />
+        </>
+      )}
       <div
         className={`${props.itemClassName} mt-[clamp(0.7rem,7vmin,3rem)] grid gap-[clamp(0.7rem,7vmin,1.75rem)]`}
         style={{
