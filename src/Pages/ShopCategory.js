@@ -8,6 +8,18 @@ import { GridTemplate } from "../Components/Popular/GridTemplate";
 
 const ShopCategory = (props) => {
   const { demo_data } = useContext(ShopContext);
+  const [banner, setBanner] = useState(null);
+  useLayoutEffect(() => {
+    setBanner(
+      props.category === "men"
+        ? men_banner
+        : props.category === "women"
+        ? women_banner
+        : props.category === "kids"
+        ? kids_banner
+        : null
+    );
+  }, [props.category]);
 
   return (
     <div className="shop-category min-w-fit w-10/12 h-fit flex flex-col items-center pt-[clamp(0.5rem,2vmax,2rem)]">
@@ -27,19 +39,7 @@ const ShopCategory = (props) => {
           </div>
         </div>
         <div className="banner-right max-h-[21rem] flex flex-1 justify-center">
-          <img
-            src={
-              props.category === "men"
-                ? men_banner
-                : props.category === "women"
-                ? women_banner
-                : props.category === "kids"
-                ? kids_banner
-                : null
-            }
-            alt="banner"
-            className="object-contain h-auto"
-          />
+          <img src={banner} alt="banner" className="object-contain h-auto" />
         </div>
       </div>
       <div className="shopcategory-indexSort flex w-full justify-between items-center mt-[clamp(0.5rem,4vmax,2.5rem)] px-[clamp(0.5rem,4vmin,1.25rem)] text-[clamp(0.4rem,4vmin,1.5rem)]">
