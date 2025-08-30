@@ -8,18 +8,14 @@ import { GridTemplate } from "../Components/Popular/GridTemplate";
 
 const ShopCategory = (props) => {
   const { demo_data } = useContext(ShopContext);
-  const [banner, setBanner] = useState(null);
-  useLayoutEffect(() => {
-    setBanner(
-      props.category === "men"
-        ? men_banner
-        : props.category === "women"
-        ? women_banner
-        : props.category === "kids"
-        ? kids_banner
-        : null
-    );
-  }, [props.category]);
+  let banner =
+    props.category === "men"
+      ? men_banner
+      : props.category === "women"
+      ? women_banner
+      : props.category === "kids"
+      ? kids_banner
+      : null;
 
   return (
     <div className="shop-category min-w-fit w-10/12 h-fit flex flex-col items-center pt-[clamp(0.5rem,2vmax,2rem)]">
