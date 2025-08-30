@@ -1,7 +1,6 @@
-import React, { useContext, useLayoutEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useRef, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Item } from "../Components/Item/Item";
 import kids_banner from "../Components/Assets/kids_banner.png";
 import men_banner from "../Components/Assets/men_banner.png";
 import women_banner from "../Components/Assets/women_banner.png";
