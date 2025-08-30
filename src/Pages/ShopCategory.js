@@ -38,7 +38,7 @@ const ShopCategory = (props) => {
                 : null
             }
             alt="banner"
-            className="sm:object-contain object-cover h-auto"
+            className="object-contain h-auto"
           />
         </div>
       </div>
