@@ -1438,6 +1438,15 @@ video {
     row-gap: 1vh;
   }
 
+  .sm\:rounded-3xl {
+    border-radius: 1.5rem;
+  }
+
+  .sm\:py-\[clamp\(1\.5rem\2c 15vmin\2c 6rem\)\] {
+    padding-top: clamp(1.5rem,15vmin,6rem);
+    padding-bottom: clamp(1.5rem,15vmin,6rem);
+  }
+
   .sm\:pl-\[clamp\(0\.3rem\2c 3vmin\2c 1\.25rem\)\] {
     padding-left: clamp(0.3rem,3vmin,1.25rem);
   }
