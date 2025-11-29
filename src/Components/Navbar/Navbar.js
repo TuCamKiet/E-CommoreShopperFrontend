@@ -24,7 +24,14 @@ const Navbar = () => {
 
   return (
     <div className="navbar sticky top-0 z-50 bg-[#fde1ff] flex w-full min-w-fit justify-between p-[max(2px,1vh)] shadow-[0_1px_3px_-2px_black]">
-      <div className="nav-logo flex items-center gap-x-px cursor-pointer">
+      <Link
+        style={{ textDecoration: "none" }}
+        to="/"
+        onClick={() => {
+          setMenu("shop");
+        }}
+        className="nav-logo flex items-center gap-x-px cursor-pointer"
+      >
         <img
           src={shopping_bag}
           className="h-[clamp(32px,10vmin,100px)] object-contain p-0"
@@ -33,7 +40,7 @@ const Navbar = () => {
         <span className="text-[#171717] text-[clamp(16px,4.3vw,38px)] max-sm:hidden font-semibold">
           SHOPPER
         </span>
-      </div>
+      </Link>
       <ul className=" nav-menu flex flex-1 items-center justify-center list-none gap-x-[2vw] text-[#626262] text-[clamp(12px,4vw,30px)] font-medium">
         <li
           className={nav_menu_li}
@@ -81,7 +88,13 @@ const Navbar = () => {
         </li>
       </ul>
       <div className=" nav-login-cart flex items-center p-[0.1rem] md:gap-x-[2vw] gap-x-[2px] max-sm:gap-x-[2vw]">
-        <Link style={{ textDecoration: "none" }} to="/login">
+        <Link
+          style={{ textDecoration: "none" }}
+          to="/login"
+          onClick={() => {
+            setMenu(null);
+          }}
+        >
           <button
             className="px-[2.2vmin] py-[1vmin]  outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
         active:bg-[#f3f3f3]"
@@ -89,7 +102,13 @@ const Navbar = () => {
             Login
           </button>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/cart">
+        <Link
+          style={{ textDecoration: "none" }}
+          to="/cart"
+          onClick={() => {
+            setMenu(null);
+          }}
+        >
           <div className="relative flex cursor-pointer">
             <FontAwesomeIcon
               icon="fa-solid fa-cart-shopping"
