@@ -10,7 +10,7 @@ const LoginSignup = () => {
 
   return (
     <div className="loginsignup flex justify-center w-full h-fit bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_80%)] sm:py-[clamp(1.5rem,15vmin,6rem)]">
-      <div className="loginsignup-container h-fit bg-white/30 backdrop-blur-sm px-[clamp(1rem,6vmin,2.5rem)] py-[clamp(1rem,10vmin,3rem)] sm:rounded-3xl">
+      <div className="loginsignup-container h-fit bg-white/40 backdrop-blur-sm px-[clamp(1rem,6vmin,2.5rem)] py-[clamp(1rem,10vmin,3rem)] sm:rounded-3xl">
         <h1 className="text-[#171717] text-[clamp(1rem,10vmin,3rem)]">
           Sign up
         </h1>
