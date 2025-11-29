@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 const LoginSignup = () => {
   const loginsignup_fields_input =
-    "flex items-center h-[clamp(1.4rem,14vmin,4rem)] w-full px-[clamp(0.4rem,4vmin,1.25rem)] border-[#c9c9c9] border-[0.065rem] outline-none text-[clamp(0.4rem,4vmin,1.25rem)] text-[#5c5c5c] rounded-full";
+    "flex items-center h-[clamp(1.4rem,14vmin,4rem)] w-full px-[clamp(0.4rem,4vmin,1.25rem)] border-[#c9c9c9] border-[0.065rem] outline-none bg-white text-[clamp(0.4rem,4vmin,1.25rem)] text-[#5c5c5c] rounded-full";
 
   const [[hiddenPassword, hiddenConfirmedPassword], setHiddenPassword] =
     useState([true, true]);
 
   return (
     <div className="loginsignup flex justify-center w-full h-fit bg-[linear-gradient(180deg,#fde1ff,#e1ffea22_80%)] py-[clamp(1.5rem,15vmin,6rem)]">
-      <div className="loginsignup-container h-fit bg-white px-[clamp(1rem,6vmin,2.5rem)] py-[clamp(1rem,10vmin,3rem)]">
+      <div className="loginsignup-container h-fit bg-white/30 backdrop-blur-sm px-[clamp(1rem,6vmin,2.5rem)] py-[clamp(1rem,10vmin,3rem)] rounded-3xl">
         <h1 className="text-[#171717] text-[clamp(1rem,10vmin,3rem)]">
           Sign up
         </h1>
