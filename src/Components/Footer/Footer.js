@@ -31,7 +31,7 @@ const Footer = () => {
         <div className={footer_icons_container}>
           <FontAwesomeIcon
             icon="fa-brands fa-square-instagram"
-            className="size-[gap-[clamp(0.5rem,5vmin,1.75rem)]]"
+            className="size-[clamp(1rem,6vmin,2.5rem)]"
           />
         </div>
         <div className={footer_icons_container}>
