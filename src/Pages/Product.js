@@ -11,7 +11,7 @@ const Product = () => {
     ? demo_data.find((p) => p.id === Number(productId))
     : [];
   return (
-    <div>
+    <div className="">
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
     </div>

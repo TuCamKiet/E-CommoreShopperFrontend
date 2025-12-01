@@ -1,28 +1,44 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 const ProductDisplay = (props) => {
   const { product } = props;
+
+  const [rowToColReverse, setRowToColReverse] = useState(window.innerWidth <= 945);
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setRowToColReverse(window.innerWidth <= 945);
+    };
+    // 2. Attach the defined function to the resize event
+    window.addEventListener("resize", handleResize);
+    // 3. Clean up the listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const productdisplay_img_list_img = "h-[clamp(1.6rem,16vmin,5rem)] object-contain";
+  const productdisplay_right_sizes_div = "p-[clamp(0.2rem,2vmin,1rem)] bg-[#fbfbfb]  border-[#ebebeb] rounded-3xl border-2 cursor-pointer";
   return (
-    <div className="productdisplay flex mt-40">
-      <div className="productdisplay-left flex gap-4">
-        <div className="productdisplay-img-list flex flex-col gap-4">
-          <img src={product.image} alt={product.image} className="h-40" />
-          <img src={product.image} alt={product.image} />
-          <img src={product.image} alt={product.image} />
-          <img src={product.image} alt={product.image} />
+    <div className="productdisplay flex w-11/12 max-md:flex-col gap-[clamp(0.2rem,2vmin,1rem)]  mx-auto my-[clamp(0.5rem,4vmax,2.5rem)] ">
+      <div className={`productdisplay-left flex ${rowToColReverse?"flex-col-reverse justify-end":""} gap-[clamp(0.2rem,2vmin,1rem)]  items-start`}>
+        <div className={`productdisplay-img-list flex ${rowToColReverse?"":"flex-col"} gap-[clamp(0.2rem,2vmin,1rem)]`}>
+          <img src={product.image} alt={product.image} className={productdisplay_img_list_img} />
+          <img src={product.image} alt={product.image} className={productdisplay_img_list_img} />
+          <img src={product.image} alt={product.image} className={productdisplay_img_list_img} />
+          <img src={product.image} alt={product.image} className={productdisplay_img_list_img} />
         </div>
-        <div className="productdisplay-img">
+        <div className="productdisplay-img max-md:w-full">
           <img
-            className="productdisplay-main-img w-[30rem] h-[40rem]"
+            className="productdisplay-main-img h-full md:max-h-[45rem] max-md:w-full object-contain"
             src={product.image}
             alt={product.image}
           />
         </div>
       </div>
-      <div className="productdisplay-right mt-16 flex flex-col">
-        <h1 className="text-[#3d3d3d] text-4xl font-bold">{product.name}</h1>
-        <div className="productdisplay-right-stars flex items-center mt-3 gap-1 text-[#1c1c1c] text-base">
+      <div className="productdisplay-right flex flex-col flex-1 ">
+        <h1 className="text-[#3d3d3d] text-[clamp(0.75rem,7.5vmin,2.25rem)] font-bold">{product.name}</h1>
+        <div className="productdisplay-right-stars flex items-center mt-[clamp(0.25rem,2.5vmin,0.75rem)] gap-[clamp(0.1rem,1vmin,0.25rem)] text-[clamp(0.4rem,4vmin,1.25rem)] text-[#1c1c1c]">
           <FontAwesomeIcon icon="fa-solid fa-star" />
           <FontAwesomeIcon icon="fa-regular fa-star" />
           <FontAwesomeIcon icon="fa-regular fa-star" />
@@ -30,7 +46,7 @@ const ProductDisplay = (props) => {
           <FontAwesomeIcon icon="fa-regular fa-star" />
           <p>(122)</p>
         </div>
-        <div className="productdisplay-right-prices flex ml-10 gap-7 text-2xl font-bold">
+        <div className="productdisplay-right-prices flex ml-[clamp(0.5rem,5vmin,1.75rem)] gap-[clamp(0.5rem,5vmin,1.75rem)] text-[clamp(0.4rem,4vmin,1.5rem)] font-bold">
           <div className="productdisplay-right-price-old text-[#818181] line-through">
             ${product.old_price}
           </div>
@@ -38,7 +54,7 @@ const ProductDisplay = (props) => {
             ${product.new_price}
           </div>
         </div>
-        <div className="productdisplay-right-description">
+        <div className="productdisplay-right-description text-[clamp(0.4rem,4vmin,1.25rem)] ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
           vulputate purus eget erat facilisis, eu bibendum est bibendum.
           Suspendisse potenti. Vivamus dui neque, bibendum vel quam vel, congue
@@ -49,29 +65,27 @@ const ProductDisplay = (props) => {
           Aliquam pulvinar luctus metus sed lacinia. Cras vehicula orci sed
           nulla rhoncus, non porta elit tincidunt.
         </div>
-        <div className="productdisplay-right-size">
-          <h1 className="mt-12 text-[#656565] text-xl font-semibold">
+        <div className="productdisplay-right-size flex flex-col gap-[clamp(0.5rem,5vmin,1.75rem)]">
+          <h1 className="mt-[clamp(1rem,6vmin,2.5rem)] text-[#656565] text-[clamp(0.4rem,4vmin,1.5rem)] font-semibold">
             Select Size
           </h1>
-          <div className="productdisplay-right-sizes flex ml-7 gap-5">
-            <div className="pl-4 pt-6 bg-[#fbfbfb] border-[0.065rem] border-[#ebebeb] rounded-sm cursor-pointer">
-              S
-            </div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+          <div className="productdisplay-right-sizes flex ml-[clamp(0.5rem,5vmin,1.75rem)] gap-[clamp(0.4rem,4vmin,1.25rem)]">
+            <div className={productdisplay_right_sizes_div}>S</div>
+            <div className={productdisplay_right_sizes_div}>M</div>
+            <div className={productdisplay_right_sizes_div}>L</div>
+            <div className={productdisplay_right_sizes_div}>XL</div>
+            <div className={productdisplay_right_sizes_div}>XXL</div>
           </div>
+          <button className="py-[clamp(0.4rem,4vmin,1.25rem)] px-[clamp(1rem,6vmin,2.5rem)] w-fit font-semibold text-white bg-[#ff4141] mb-10 outline-none rounded-full cursor-pointer border-none">
+            ADD TO CART
+          </button>
         </div>
-        <button className="pl-5 pt-10 w-48 text-base font-semibold text-white bg-[#ff4141] mb-10 outline-none cursor-pointer border-none">
-          ADD TO CART
-        </button>
-        <p className="productdisplay-right-category mt-2">
-          <span className="font-semibold">Category :</span>Women, T-Shirt, Crop
+        <p className="productdisplay-right-category text-[clamp(0.4rem,4vmin,1.25rem)]">
+          <span className="font-semibold text-[clamp(0.4rem,4vmin,1.5rem)]">Category: </span>Women, T-Shirt, Crop
           Top
         </p>
-        <p className="productdisplay-right-tag">
-          <span className="font-semibold">Tags :</span>Modern, Latest
+        <p className="productdisplay-right-tag text-[clamp(0.4rem,4vmin,1.25rem)]">
+          <span className="font-semibold text-[clamp(0.4rem,4vmin,1.5rem)]">Tags: </span>Modern, Latest
         </p>
       </div>
     </div>

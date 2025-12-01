@@ -58,7 +58,7 @@ const GridTemplate = (props) => {
         }}
         ref={containerRef}
       >
-        {props.data &&
+        {props.data &&  
           props.data
             .slice(0, visibleItemsPerRow * props.maxRow)
             .map((item, i) => {
