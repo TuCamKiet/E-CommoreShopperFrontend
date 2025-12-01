@@ -770,6 +770,14 @@ video {
   height: clamp(1.6rem,16vmin,5rem);
 }
 
+.h-\[clamp\(1\.6rem\2c 15vmin\2c 5rem\)\] {
+  height: clamp(1.6rem,15vmin,5rem);
+}
+
+.h-\[clamp\(1\.5rem\2c 15vmin\2c 5rem\)\] {
+  height: clamp(1.5rem,15vmin,5rem);
+}
+
 .max-h-\[21rem\] {
   max-height: 21rem;
 }

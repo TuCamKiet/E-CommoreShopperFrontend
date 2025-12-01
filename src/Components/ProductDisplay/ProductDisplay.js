@@ -17,7 +17,7 @@ const ProductDisplay = (props) => {
     };
   }, []);
 
-  const productdisplay_img_list_img = "h-[clamp(1.6rem,16vmin,5rem)] object-contain";
+  const productdisplay_img_list_img = "h-[clamp(1.5rem,15vmin,5rem)] object-contain";
   const productdisplay_right_sizes_div = "p-[clamp(0.2rem,2vmin,1rem)] bg-[#fbfbfb]  border-[#ebebeb] rounded-3xl border-2 cursor-pointer";
   return (
     <div className="productdisplay flex w-10/12 max-md:flex-col gap-[clamp(0.2rem,2vmin,1rem)]  mx-auto my-[clamp(0.5rem,4vmax,2.5rem)] ">
