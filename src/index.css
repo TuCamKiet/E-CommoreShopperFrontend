@@ -582,11 +582,6 @@ video {
   margin: auto;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-\[clamp\(0\.5rem\2c 4vmax\2c 2\.5rem\)\] {
   margin-top: clamp(0.5rem,4vmax,2.5rem);
   margin-bottom: clamp(0.5rem,4vmax,2.5rem);
@@ -829,6 +824,10 @@ video {
   flex: none;
 }
 
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -862,10 +861,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-col-reverse {
-  flex-direction: column-reverse;
 }
 
 .flex-wrap {
@@ -1146,6 +1141,11 @@ video {
 .px-\[2\.2vmin\] {
   padding-left: 2.2vmin;
   padding-right: 2.2vmin;
+}
+
+.px-\[5\%\] {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .px-\[clamp\(0\.2rem\2c 2vmin\2c 1rem\)\] {
@@ -1447,16 +1447,36 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border-\[\#ff4141\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 65 65 / var(--tw-border-opacity, 1));
+}
+
+.hover\:font-semibold:hover {
+  font-weight: 600;
+}
+
+.hover\:text-\[\#ff4141\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 65 65 / var(--tw-text-opacity, 1));
+}
+
 .active\:bg-\[\#f3f3f3\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(243 243 243 / var(--tw-bg-opacity, 1));
 }
 
-@media not all and (min-width: 768px) {
-  .max-md\:w-full {
-    width: 100%;
+@media not all and (min-width: 1024px) {
+  .max-lg\:flex-col-reverse {
+    flex-direction: column-reverse;
   }
 
+  .max-lg\:justify-end {
+    justify-content: flex-end;
+  }
+}
+
+@media not all and (min-width: 768px) {
   .max-md\:flex-col {
     flex-direction: column;
   }
@@ -1554,5 +1574,11 @@ video {
 
   .md\:gap-x-\[2vw\] {
     column-gap: 2vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-col {
+    flex-direction: column;
   }
 }
