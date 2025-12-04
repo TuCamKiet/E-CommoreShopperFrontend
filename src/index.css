@@ -660,6 +660,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .size-\[clamp\(0\.3rem\2c 3\.8vmin\2c 1\.15rem\)\] {
   width: clamp(0.3rem,3.8vmin,1.15rem);
   height: clamp(0.3rem,3.8vmin,1.15rem);
@@ -673,11 +677,6 @@ video {
 .size-\[clamp\(1rem\2c 6vmin\2c 2rem\)\] {
   width: clamp(1rem,6vmin,2rem);
   height: clamp(1rem,6vmin,2rem);
-}
-
-.size-\[gap-\[clamp\(0\.5rem\2c 5vmin\2c 1\.75rem\)\]\] {
-  width: gap-[clamp(0.5rem,5vmin,1.75rem)];
-  height: gap-[clamp(0.5rem,5vmin,1.75rem)];
 }
 
 .h-1 {
@@ -735,6 +734,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .max-h-\[21rem\] {
@@ -1399,6 +1402,24 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\] {
+  color: ;
+}
+
+.text-\[\#\] {
+  color: #;
+}
+
+.text-\[\#FED\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 238 221 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#FED42E\] {
+  --tw-text-opacity: 1;
+  color: rgb(254 212 46 / var(--tw-text-opacity, 1));
 }
 
 .line-through {

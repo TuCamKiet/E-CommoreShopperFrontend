@@ -1,21 +1,16 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import shopping_bag from "../Assets/shopping_bag.png";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState();
-
-  // Khi mount, đọc menu item được chọn từ sessionStorage
+  const [menu, setMenu] = useState("shop");
+  let location = useLocation();
+   
   useEffect(() => {
-    const saveMenu = sessionStorage.getItem("menu");
-    setMenu(saveMenu ? saveMenu : "shop");
-  }, []);
-
-  // Mỗi lần menu item thay đổi thì lưu vào sessionStorage
-  useEffect(() => {
-    if (menu) sessionStorage.setItem("menu", menu);
-  }, [menu]);
+    let menuState = location.pathname.length === 1 ? "shop" : location.pathname.split("/")[1];
+    setMenu(prev => prev === menuState ? prev : menuState);
+  }, [location]);
 
   //group className
   const nav_menu_li =
@@ -27,9 +22,6 @@ const Navbar = () => {
       <Link
         style={{ textDecoration: "none" }}
         to="/"
-        onClick={() => {
-          setMenu("shop");
-        }}
         className="nav-logo flex items-center gap-x-px cursor-pointer"
       >
         <img
@@ -42,58 +34,44 @@ const Navbar = () => {
         </span>
       </Link>
       <ul className=" nav-menu flex flex-1 items-center justify-center list-none gap-x-[2vw] text-[#626262] text-[clamp(12px,4vw,30px)] font-medium">
-        <li
-          className={nav_menu_li}
-          onClick={() => {
-            setMenu("shop");
-          }}
-        >
+        <li className={nav_menu_li}>
           <Link style={{ textDecoration: "none" }} to="/">
             Shop
           </Link>
-          {menu === "shop" ? <hr className={nav_menu_hr} /> : ""}
+          <hr className={`${nav_menu_hr} ${menu === "shop" ? "" : "hidden"}`} />
         </li>
         <li
           className={nav_menu_li}
-          onClick={() => {
-            setMenu("men");
-          }}
         >
           <Link style={{ textDecoration: "none" }} to="/men">
             Men
           </Link>
-          {menu === "men" ? <hr className={nav_menu_hr} /> : ""}
+          <hr className={`${nav_menu_hr} ${menu === "men" ? "" : "hidden"}`} />
+
         </li>
         <li
           className={nav_menu_li}
-          onClick={() => {
-            setMenu("women");
-          }}
         >
           <Link style={{ textDecoration: "none" }} to="/women">
             Women
           </Link>
-          {menu === "women" ? <hr className={nav_menu_hr} /> : ""}
+          <hr className={`${nav_menu_hr} ${menu === "women" ? "" : "hidden"}`} />
+
         </li>
         <li
           className={nav_menu_li}
-          onClick={() => {
-            setMenu("kids");
-          }}
         >
           <Link style={{ textDecoration: "none" }} to="/kids">
             Kids
           </Link>
-          {menu === "kids" ? <hr className={nav_menu_hr} /> : ""}
+          <hr className={`${nav_menu_hr} ${menu === "kids" ? "" : "hidden"}`} />
+
         </li>
       </ul>
       <div className=" nav-login-cart flex items-center p-[0.1rem] md:gap-x-[2vw] gap-x-[2px] max-sm:gap-x-[2vw]">
         <Link
           style={{ textDecoration: "none" }}
           to="/login"
-          onClick={() => {
-            setMenu(null);
-          }}
         >
           <button
             className="px-[2.2vmin] py-[1vmin]  outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
@@ -105,9 +83,6 @@ const Navbar = () => {
         <Link
           style={{ textDecoration: "none" }}
           to="/cart"
-          onClick={() => {
-            setMenu(null);
-          }}
         >
           <div className="relative flex cursor-pointer">
             <FontAwesomeIcon
