@@ -6,10 +6,11 @@ import shopping_bag from "../Assets/shopping_bag.png";
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   let location = useLocation();
-   
+
   useEffect(() => {
-    let menuState = location.pathname.length === 1 ? "shop" : location.pathname.split("/")[1];
-    setMenu(prev => prev === menuState ? prev : menuState);
+    let menuState =
+      location.pathname.length === 1 ? "shop" : location.pathname.split("/")[1];
+    setMenu((prev) => (prev === menuState ? prev : menuState));
   }, [location]);
 
   //group className
@@ -20,6 +21,7 @@ const Navbar = () => {
   return (
     <div className="navbar sticky top-0 z-50 bg-[#fde1ff] flex w-full min-w-fit justify-between p-[max(2px,1vh)] shadow-[0_1px_3px_-2px_black]">
       <Link
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         style={{ textDecoration: "none" }}
         to="/"
         className="nav-logo flex items-center gap-x-px cursor-pointer"
@@ -35,41 +37,51 @@ const Navbar = () => {
       </Link>
       <ul className=" nav-menu flex flex-1 items-center justify-center list-none gap-x-[2vw] text-[#626262] text-[clamp(12px,4vw,30px)] font-medium">
         <li className={nav_menu_li}>
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ textDecoration: "none" }}
+            to="/"
+          >
             Shop
           </Link>
           <hr className={`${nav_menu_hr} ${menu === "shop" ? "" : "hidden"}`} />
         </li>
-        <li
-          className={nav_menu_li}
-        >
-          <Link style={{ textDecoration: "none" }} to="/men">
+        <li className={nav_menu_li}>
+          <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ textDecoration: "none" }}
+            to="/men"
+          >
             Men
           </Link>
           <hr className={`${nav_menu_hr} ${menu === "men" ? "" : "hidden"}`} />
-
         </li>
-        <li
-          className={nav_menu_li}
-        >
-          <Link style={{ textDecoration: "none" }} to="/women">
+        <li className={nav_menu_li}>
+          <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ textDecoration: "none" }}
+            to="/women"
+          >
             Women
           </Link>
-          <hr className={`${nav_menu_hr} ${menu === "women" ? "" : "hidden"}`} />
-
+          <hr
+            className={`${nav_menu_hr} ${menu === "women" ? "" : "hidden"}`}
+          />
         </li>
-        <li
-          className={nav_menu_li}
-        >
-          <Link style={{ textDecoration: "none" }} to="/kids">
+        <li className={nav_menu_li}>
+          <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ textDecoration: "none" }}
+            to="/kids"
+          >
             Kids
           </Link>
           <hr className={`${nav_menu_hr} ${menu === "kids" ? "" : "hidden"}`} />
-
         </li>
       </ul>
       <div className=" nav-login-cart flex items-center p-[0.1rem] md:gap-x-[2vw] gap-x-[2px] max-sm:gap-x-[2vw]">
         <Link
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           style={{ textDecoration: "none" }}
           to="/login"
         >
@@ -81,6 +93,7 @@ const Navbar = () => {
           </button>
         </Link>
         <Link
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           style={{ textDecoration: "none" }}
           to="/cart"
         >

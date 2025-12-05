@@ -1059,6 +1059,10 @@ video {
   gap: clamp(1rem,7vmin,3rem);
 }
 
+.gap-\[clamp\(2rem\2c 20vmin\2c 10rem\)\] {
+  gap: clamp(2rem,20vmin,10rem);
+}
+
 .gap-x-\[2px\] {
   column-gap: 2px;
 }

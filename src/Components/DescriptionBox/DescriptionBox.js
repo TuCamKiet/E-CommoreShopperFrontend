@@ -2,7 +2,7 @@ import React from "react";
 
 const DescriptionBox = () => {
   return (
-    <div className="descriptionbox mx-[5%] mt-[clamp(2rem,20vmin,10rem)]">
+    <div className="descriptionbox mx-[5%]">
       <div className="descriptionbox-navigator flex">
         <div className="descriptionbox-nav-box flex items-center justify-center text-[clamp(0.4rem,4vmin,1.5rem)] font-semibold py-[clamp(0.4rem,4vmin,1.25rem)] px-[clamp(1rem,6vmin,2.5rem)] border-[0.07rem] border-[#d0d0d0] cursor-pointer">
           Description

@@ -58,9 +58,14 @@ const GridTemplate = (props) => {
         }}
         ref={containerRef}
       >
-        {props.data &&  
+        {props.data &&
           props.data
-            .slice(0, visibleItemsPerRow * props.maxRow)
+            .slice(
+              0,
+              (visibleItemsPerRow > 2
+                ? visibleItemsPerRow
+                : visibleItemsPerRow * 2) * props.maxRow
+            )
             .map((item, i) => {
               return (
                 <div key={i} ref={i === 0 ? itemRef : null}>

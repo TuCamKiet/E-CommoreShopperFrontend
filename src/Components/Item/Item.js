@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Item = ({ item }) => {
   return (
     <Link
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       style={{ textDecoration: "none" }}
       to={`/product/${item.id}`}
       className="item flex flex-col flex-none w-44 md:w-80 h-full gap-[clamp(0.2rem,0.8vmin,0.8rem)] transition-transform duration-[600ms] hover:scale-105 cursor-pointer"

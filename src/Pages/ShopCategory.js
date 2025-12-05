@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect, useRef, useState } from "react";
+import React, { useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import kids_banner from "../Components/Assets/kids_banner.png";
