@@ -10,7 +10,7 @@ const RelatedProducts = () => {
       componentClassName={"relatedproducts"}
       itemClassName={"relatedproducts-item"}
       data={demo_data}
-      maxRow={1}
+      maxRow={2}
     />
   );
 };
