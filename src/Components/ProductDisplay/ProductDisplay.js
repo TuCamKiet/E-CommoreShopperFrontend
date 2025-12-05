@@ -6,8 +6,6 @@ const ProductDisplay = (props) => {
   const { product } = props;
   const { setCartItems } = useContext(ShopContext);
   const addToCart = () => {
-    console.log(product.id);
-
     setCartItems((prev) => {
       return { ...prev, [product.id]: (prev[product.id] || 0) + 1 };
     });

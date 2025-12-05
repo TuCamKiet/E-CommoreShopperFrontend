@@ -104,7 +104,7 @@ const Navbar = () => {
               icon="fa-solid fa-cart-shopping"
               className="text-[clamp(12px,4vw,32px)]"
             />
-            <span className="nav-cart-count absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 bg-red-500 text-white font-medium rounded-full px-[10%] text-[clamp(9px,2.3vmin,20px)]">
+            <span className="nav-cart-count absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 bg-red-500 text-white font-medium rounded-full p-[15%] leading-none text-[clamp(9px,2.3vmin,20px)]">
               {cartItems
                 ? Object.values(cartItems).reduce((a, b) => a + b, 0)
                 : 0}

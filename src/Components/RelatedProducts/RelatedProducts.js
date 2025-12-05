@@ -5,13 +5,15 @@ import { GridTemplate } from "../Popular/GridTemplate";
 const RelatedProducts = () => {
   const { demo_data } = useContext(ShopContext);
   return (
-    <GridTemplate
-      title={"Related Products"}
-      componentClassName={"relatedproducts"}
-      itemClassName={"relatedproducts-item"}
-      data={demo_data}
-      maxRow={2}
-    />
+    <>
+      <GridTemplate
+        title={"Related Products"}
+        componentClassName={"relatedproducts"}
+        itemClassName={"relatedproducts-item"}
+        data={demo_data}
+        maxRow={2}
+      />
+    </>
   );
 };
 

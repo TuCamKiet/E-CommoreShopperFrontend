@@ -6,13 +6,15 @@ const NewCollections = () => {
   const { demo_data } = useContext(ShopContext);
 
   return (
-    <GridTemplate
-      title={"NEW COLLECTIONS"}
-      componentClassName={"new-collections"}
-      itemClassName={"collections"}
-      data={demo_data}
-      maxRow={2}
-    />
+    <>
+      <GridTemplate
+        title={"NEW COLLECTIONS"}
+        componentClassName={"new-collections"}
+        itemClassName={"collections"}
+        data={demo_data}
+        maxRow={2}
+      />
+    </>
   );
 };
 

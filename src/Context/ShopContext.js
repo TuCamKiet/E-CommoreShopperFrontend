@@ -12,7 +12,6 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     sessionStorage.setItem("cart", JSON.stringify(cartItems));
-    console.log(JSON.parse(sessionStorage.getItem("cart")));
   }, [cartItems]);
 
   const contextValue = {
