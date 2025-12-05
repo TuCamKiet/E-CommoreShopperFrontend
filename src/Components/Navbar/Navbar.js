@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import shopping_bag from "../Assets/shopping_bag.png";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
+  const { cartItems } = useContext(ShopContext);
   const [menu, setMenu] = useState("shop");
   let location = useLocation();
 
@@ -103,7 +105,9 @@ const Navbar = () => {
               className="text-[clamp(12px,4vw,32px)]"
             />
             <span className="nav-cart-count absolute top-0 right-0 translate-x-1/4 -translate-y-1/2 bg-red-500 text-white font-medium rounded-full px-[10%] text-[clamp(9px,2.3vmin,20px)]">
-              0
+              {cartItems
+                ? Object.values(cartItems).reduce((a, b) => a + b, 0)
+                : 0}
             </span>
           </div>
         </Link>

@@ -17,7 +17,7 @@ const Breadcrum = (props) => {
       <Link
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         style={{ textDecoration: "none" }}
-        to={`/${product.category}`}
+        to={`/${product.category.trim().toLowerCase()}`}
       >
         {product.category}
         <FontAwesomeIcon icon="fa-solid fa-angle-right" />

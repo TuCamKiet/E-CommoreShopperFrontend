@@ -613,10 +613,6 @@ video {
   margin-top: 0.25rem;
 }
 
-.mt-40 {
-  margin-top: 10rem;
-}
-
 .mt-\[clamp\(0\.25rem\2c 2\.5vmin\2c 0\.75rem\)\] {
   margin-top: clamp(0.25rem,2.5vmin,0.75rem);
 }
@@ -659,26 +655,6 @@ video {
 
 .mt-\[clamp\(1rem\2c 6vmin\2c 2\.5rem\)\] {
   margin-top: clamp(1rem,6vmin,2.5rem);
-}
-
-.mt-\[40\] {
-  margin-top: 40;
-}
-
-.mt-\[-\[clamp\(1\.8rem\2c 18vmin\2c 10rem\)\]\] {
-  margin-top: -[clamp(1.8rem,18vmin,10rem)];
-}
-
-.mt-\[clamp\(1\.8rem\2c 18vmin\2c 10rem\)\] {
-  margin-top: clamp(1.8rem,18vmin,10rem);
-}
-
-.mt-\[clamp\(1\.8rem\2c 20vmin\2c 10rem\)\] {
-  margin-top: clamp(1.8rem,20vmin,10rem);
-}
-
-.mt-\[clamp\(2rem\2c 20vmin\2c 10rem\)\] {
-  margin-top: clamp(2rem,20vmin,10rem);
 }
 
 .flex {
@@ -872,90 +848,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cursor-help {
-  cursor: help;
-}
-
-.cursor-not-allowed {
-  cursor: not-allowed;
-}
-
-.cursor-context-menu {
-  cursor: context-menu;
-}
-
-.cursor-move {
-  cursor: move;
-}
-
-.cursor-wait {
-  cursor: wait;
-}
-
-.cursor-text {
-  cursor: text;
-}
-
-.cursor-none {
-  cursor: none;
-}
-
-.cursor-progress {
-  cursor: progress;
-}
-
-.cursor-cell {
-  cursor: cell;
-}
-
-.cursor-crosshair {
-  cursor: crosshair;
-}
-
-.cursor-alias {
-  cursor: alias;
-}
-
-.cursor-copy {
-  cursor: copy;
-}
-
-.cursor-no-drop {
-  cursor: no-drop;
-}
-
-.cursor-grabbing {
-  cursor: grabbing;
-}
-
-.cursor-all-scroll {
-  cursor: all-scroll;
-}
-
-.cursor-col-resize {
-  cursor: col-resize;
-}
-
-.cursor-n-resize {
-  cursor: n-resize;
-}
-
-.cursor-e-resize {
-  cursor: e-resize;
-}
-
-.cursor-s-resize {
-  cursor: s-resize;
-}
-
-.cursor-nesw-resize {
-  cursor: nesw-resize;
-}
-
-.cursor-zoom-in {
-  cursor: zoom-in;
 }
 
 .select-none {

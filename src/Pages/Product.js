@@ -9,10 +9,8 @@ import { RelatedProducts } from "../Components/RelatedProducts/RelatedProducts";
 const Product = () => {
   const { demo_data } = useContext(ShopContext);
   const { productId } = useParams();
-  const product = demo_data
-    ? demo_data.find((p) => p.id === Number(productId))
-    : [];
-  return (
+  const product = demo_data.find((p) => p.id === Number(productId));
+  return product ? (
     <div className="product flex flex-col gap-[clamp(2rem,20vmin,10rem)]">
       <div>
         <Breadcrum product={product} />
@@ -21,6 +19,8 @@ const Product = () => {
       <DescriptionBox />
       <RelatedProducts />
     </div>
+  ) : (
+    <div>Không tìm thấy sản phẩm</div>
   );
 };
 

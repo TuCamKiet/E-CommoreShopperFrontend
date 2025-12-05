@@ -1,7 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const { setCartItems } = useContext(ShopContext);
+  const addToCart = () => {
+    console.log(product.id);
+
+    setCartItems((prev) => {
+      return { ...prev, [product.id]: (prev[product.id] || 0) + 1 };
+    });
+  };
 
   const productdisplay_img_list_img =
     "h-[clamp(1.5rem,15vmin,5rem)] object-contain";
@@ -98,7 +108,10 @@ const ProductDisplay = (props) => {
             <div className={productdisplay_right_sizes_div}>XL</div>
             <div className={productdisplay_right_sizes_div}>XXL</div>
           </div>
-          <button className="py-[clamp(0.4rem,4vmin,1.25rem)] px-[clamp(1rem,6vmin,2.5rem)] w-fit font-semibold text-white bg-[#ff4141] mb-10 outline-none rounded-full cursor-pointer border-none">
+          <button
+            onClick={addToCart}
+            className="py-[clamp(0.4rem,4vmin,1.25rem)] px-[clamp(1rem,6vmin,2.5rem)] w-fit font-semibold text-white bg-[#ff4141] mb-10 outline-none rounded-full cursor-pointer border-none"
+          >
             ADD TO CART
           </button>
         </div>
