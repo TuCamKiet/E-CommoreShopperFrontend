@@ -88,7 +88,7 @@ const Navbar = () => {
           to="/login"
         >
           <button
-            className="px-[2.2vmin] py-[1vmin]  outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
+            className="px-[2.2vmin] py-[1vmin] outline-none border-[1px] border-[#7a7a7a] rounded-full text-[#515151] text-[clamp(12px,4vw,30px)] font-medium cursor-pointer bg-white
         active:bg-[#f3f3f3]"
           >
             Login

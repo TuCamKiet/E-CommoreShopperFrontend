@@ -16,7 +16,7 @@ const ProductDisplay = (props) => {
   const productdisplay_right_sizes_div =
     "p-[clamp(0.2rem,2vmin,1rem)] bg-[#fbfbfb]  border-[#ebebeb] rounded-full border-[0.07rem] hover:text-[#ff4141] hover:border-[#ff4141] cursor-pointer";
   return (
-    <div className="productdisplay flex max-md:flex-col gap-[clamp(0.5rem,5vmin,1.75rem)] px-[5%] my-[clamp(0.5rem,4vmax,2.5rem)] ">
+    <div className="productdisplay flex max-md:flex-col gap-[clamp(0.5rem,5vmin,1.75rem)] mx-[5%] my-[clamp(0.5rem,4vmax,2.5rem)] ">
       <div className="productdisplay-left flex max-lg:flex-col-reverse max-lg:justify-end gap-[clamp(0.2rem,2vmin,1rem)] items-start">
         <div className="productdisplay-img-list flex flex-shrink-0 lg:flex-col gap-[clamp(0.2rem,2vmin,1rem)]">
           <img
@@ -56,7 +56,6 @@ const ProductDisplay = (props) => {
           <FontAwesomeIcon
             icon="fa-solid fa-star"
             className="text-[#FED42E] cursor-pointer"
-            onMouseEnter={() => {}}
           />
           <FontAwesomeIcon
             icon="fa-regular fa-star"

@@ -7,7 +7,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(() => {
     //sessionStorage.clear();
     const cart = sessionStorage.getItem("cart");
-    return cart ? JSON.parse(cart) : {};
+    return cart ? JSON.parse(cart) : [];
   });
 
   useEffect(() => {
