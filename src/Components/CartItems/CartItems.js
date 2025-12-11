@@ -1,10 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { ShopContext } from "../../Context/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { ConfirmModal } from "./ConfirmModal";
 
 const CartItems = () => {
   const { demo_data, cartItems, setCartItems } = useContext(ShopContext);
+
+  const cartProductMap = useMemo(() => {
+    return Object.entries(cartItems).map(([itemId, quantity], i) => {
+      const product = demo_data.find((p) => String(p.id) === itemId);
+      return product
+        ? [itemId, quantity, product.name, product.new_price, product.image]
+        : [];
+    });
+  }, [cartItems, demo_data]);
 
   const [errorsQuantities, setErrorsQuantities] = useState({});
   const handleQuantityChange = (itemId, e) => {
@@ -36,10 +46,10 @@ const CartItems = () => {
       return;
     }
 
-    // if (numeric === 0) {
-    //   handleQuantityRemove(itemId);
-    //   return;
-    // }
+    if (numeric === 0) {
+      setConfirmOpen(true);
+      return;
+    }
 
     setErrorsQuantities((prev) => ({ ...prev, [itemId]: null }));
     setCartItems((prev) => ({ ...prev, [itemId]: numeric }));
@@ -72,7 +82,7 @@ const CartItems = () => {
     }
 
     if (value === 0) {
-      handleQuantityRemove(itemId);
+      setConfirmOpen(true);
       return;
     }
 
@@ -82,6 +92,7 @@ const CartItems = () => {
     setCartItems((prev) => ({ ...prev, [itemId]: value }));
   };
 
+  const [confirmOpen, setConfirmOpen] = useState(false);
   /*  Sao ko delete trực tiếp mà cần new obj ?
   Vì React không nhận ra thay đổi state nếu bạn mutate trực tiếp object cũ.
   
@@ -109,7 +120,16 @@ const CartItems = () => {
       delete newErrorsQuantities[itemId];
       return newErrorsQuantities;
     });
+
+    setConfirmOpen(false);
   };
+
+  const subtotal = useMemo(() => {
+    return cartProductMap.reduce(
+      (sum, [, quantity, , new_price]) => sum + (new_price || 0) * quantity,
+      0
+    );
+  }, [cartProductMap]);
 
   // useEffect(() => {
   //   console.log(cartItems);
@@ -132,82 +152,87 @@ const CartItems = () => {
           </tr>
         </thead>
         <tbody>
-          {cartItems &&
-            Object.keys(cartItems).map((itemId, i) => {
-              const product = demo_data.find((p) => String(p.id) === itemId);
-              return product ? (
-                <tr
-                  key={i}
-                  id={product.id}
-                  className="cartitems-format sm:text-[clamp(0.4rem,4vmin,1.25rem)] text-[clamp(0.32rem,3.2vmin,1rem)] font-medium border-b-[clamp(0.05rem,0.5vmin,0.125rem)]"
-                >
-                  <td>
-                    <Link
-                      onClick={() =>
-                        window.scrollTo({ top: 0, behavior: "smooth" })
-                      }
-                      style={{ textDecoration: "none" }}
-                      to={`/product/${product.id}`}
-                    >
-                      <img
-                        src={product.image}
-                        alt={product.image}
-                        className="carticon-product-icon p-[clamp(0.2rem,2vmin,0.5rem)] aspect-[1/1.3] object-cover object-center mx-auto"
-                      />
-                    </Link>
-                  </td>
-                  <td>
-                    <Link
-                      onClick={() =>
-                        window.scrollTo({ top: 0, behavior: "smooth" })
-                      }
-                      style={{ textDecoration: "none" }}
-                      to={`/product/${product.id}`}
-                      className="line-clamp-2"
-                    >
-                      {product.name}
-                    </Link>
-                  </td>
-                  <td>${product.new_price}</td>
-                  <td>
-                    <div className="flex flex-nowrap w-fit mx-auto items-center justify-center relative">
+          {cartProductMap &&
+            cartProductMap.map(
+              ([itemId, quantity, name, new_price, image], i) => {
+                return (
+                  <tr
+                    key={i}
+                    id={itemId}
+                    className="cartitems-format sm:text-[clamp(0.4rem,4vmin,1.25rem)] text-[clamp(0.32rem,3.2vmin,1rem)] font-medium border-b-[clamp(0.05rem,0.5vmin,0.125rem)]"
+                  >
+                    <td>
+                      <Link
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
+                        style={{ textDecoration: "none" }}
+                        to={`/product/${itemId}`}
+                      >
+                        <img
+                          src={image}
+                          alt={image}
+                          className="carticon-product-icon p-[clamp(0.2rem,2vmin,0.5rem)] aspect-[1/1.3] object-cover object-center mx-auto"
+                        />
+                      </Link>
+                    </td>
+                    <td>
+                      <Link
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
+                        style={{ textDecoration: "none" }}
+                        to={`/product/${itemId}`}
+                        className="line-clamp-2"
+                      >
+                        {name}
+                      </Link>
+                    </td>
+                    <td>${new_price}</td>
+                    <td>
+                      <div className="flex flex-nowrap w-fit mx-auto items-center justify-center relative">
+                        <FontAwesomeIcon
+                          icon="fa-solid fa-minus"
+                          className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
+                          onClick={() => handleQuantityDecrease(itemId)}
+                        />
+                        <input
+                          value={quantity}
+                          type="text"
+                          inputMode="numeric"
+                          className="cartitems-quantity sm:w-[clamp(0.8rem,8vmin,2.5rem)] w-[clamp(0.72rem,7.2vmin,2.25rem)] sm:mx-[clamp(0.2rem,2vmin,0.625rem)] border-[#ebebeb] bg-[#fff] text-center outline-none"
+                          onChange={(e) => handleQuantityChange(itemId, e)}
+                        />
+                        <FontAwesomeIcon
+                          icon="fa-solid fa-plus"
+                          className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
+                          onClick={() => handleQuantityIncrease(itemId)}
+                        />
+                        {errorsQuantities[itemId] && (
+                          <div className="absolute top-full left-0 mt-[3%] bg-red-100 text-red-700 text-[clamp(0.28rem,2.8vmin,0.875rem)] py-[1.5%] px-[5%] rounded shadow-md whitespace-nowrap z-40">
+                            ⚠ {errorsQuantities[itemId]}
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                    <td>${new_price * quantity}</td>
+                    <td>
                       <FontAwesomeIcon
-                        icon="fa-solid fa-minus"
-                        className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
-                        onClick={() => handleQuantityDecrease(itemId)}
+                        icon="fa-solid fa-trash-can"
+                        className="cartitems-remove-icon cursor-pointer mx-auto"
+                        onClick={() => setConfirmOpen(true)}
                       />
-                      <input
-                        value={cartItems[itemId]}
-                        type="text"
-                        inputMode="numeric"
-                        className="cartitems-quantity sm:w-[clamp(0.8rem,8vmin,2.5rem)] w-[clamp(0.72rem,7.2vmin,2.25rem)] sm:mx-[clamp(0.2rem,2vmin,0.625rem)] border-[#ebebeb] bg-[#fff] text-center outline-none"
-                        onChange={(e) => handleQuantityChange(itemId, e)}
-                      />
-                      <FontAwesomeIcon
-                        icon="fa-solid fa-plus"
-                        className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
-                        onClick={() => handleQuantityIncrease(itemId)}
-                      />
-                      {errorsQuantities[itemId] && (
-                        <div className="absolute top-full left-0 mt-[3%] bg-red-100 text-red-700 text-[clamp(0.28rem,2.8vmin,0.875rem)] py-[1.5%] px-[5%] rounded shadow-md whitespace-nowrap text-left z-40">
-                          ⚠ {errorsQuantities[itemId]}
-                        </div>
-                      )}
-                    </div>
-                  </td>
-                  <td>${product.new_price * cartItems[itemId]}</td>
-                  <td>
-                    <FontAwesomeIcon
-                      icon="fa-solid fa-trash-can"
-                      className="cartitems-remove-icon cursor-pointer mx-auto"
-                      onClick={() => handleQuantityRemove(itemId)}
+                    </td>
+                    <ConfirmModal
+                      open={confirmOpen}
+                      message="Are you sure you want to remove this item?"
+                      onConfirm={() => handleQuantityRemove(itemId)}
+                      onCancel={() => setConfirmOpen(false)}
                     />
-                  </td>
-                </tr>
-              ) : (
-                ""
-              );
-            })}
+                  </tr>
+                );
+              }
+            )}
         </tbody>
       </table>
       <div className="cartitems-down flex max-sm:flex-col-reverse md:mx-[3%] md:gap-[10%] sm:gap-[5%] gap-[clamp(1.8rem,18vmin,10rem)]">
@@ -218,7 +243,7 @@ const CartItems = () => {
           <div>
             <div className={cartitems_total_item}>
               <p>Subtotal</p>
-              <p>${0}</p>
+              <p>${subtotal}</p>
             </div>
             <hr />
             <div className={cartitems_total_item}>
@@ -228,7 +253,7 @@ const CartItems = () => {
             <hr />
             <div className={`${cartitems_total_item} font-semibold`}>
               <h3>Total</h3>
-              <h3>${0}</h3>
+              <h3>${subtotal}</h3>
             </div>
           </div>
           <button className="bg-[#ff5a5a] text-[#fff] text-[clamp(0.4rem,4vmin,1.25rem)] lg:px-[clamp(1rem,6vmin,5rem)] px-[clamp(0.3rem,2vmin,1rem)] max-sm:px-[clamp(1rem,6vmin,5rem)] py-[clamp(0.3rem,2vmin,1rem)]  w-fit font-semibold">
