@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import { ShopContext } from "../../Context/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ConfirmModal } from "./ConfirmModal";
+import { ConfirmModal } from "../ConfirmModal";
 
 const CartItems = () => {
   const { demo_data, cartItems, setCartItems } = useContext(ShopContext);
@@ -73,7 +73,7 @@ const CartItems = () => {
 
   const handleQuantityDecrease = (itemId) => {
     let value = Number(cartItems[itemId]);
-    if (value < 0) {
+    if (value <= 0) {
       setErrorsQuantities((prev) => ({
         ...prev,
         [itemId]: "Minimum value is 0",
@@ -81,12 +81,12 @@ const CartItems = () => {
       return;
     }
 
+    value -= 1;
+
     if (value === 0) {
       setConfirmOpen(true);
       return;
     }
-
-    value -= 1;
 
     setErrorsQuantities((prev) => ({ ...prev, [itemId]: null }));
     setCartItems((prev) => ({ ...prev, [itemId]: value }));
