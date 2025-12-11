@@ -594,11 +594,6 @@ video {
   margin: auto;
 }
 
-.mx-\[3\%\] {
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
 .mx-\[5\%\] {
   margin-left: 5%;
   margin-right: 5%;
@@ -631,16 +626,8 @@ video {
   margin-left: clamp(0.5rem,5vmin,1.75rem);
 }
 
-.mr-48 {
-  margin-right: 12rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .mt-\[3\%\] {
@@ -687,28 +674,12 @@ video {
   margin-top: clamp(1rem,6vmin,2.5rem);
 }
 
-.mt-\[clamp\(2rem\2c 20vmin\2c 10rem\)\] {
-  margin-top: clamp(2rem,20vmin,10rem);
-}
-
 .mt-\[clamp\(1rem\2c 6vmin\2c 2rem\)\] {
   margin-top: clamp(1rem,6vmin,2rem);
 }
 
-.mt-\[clamp\(1rem\2c 6vmin\2c 2\.rem\)\] {
-  margin-top: clamp(1rem,6vmin,2.rem);
-}
-
-.mt-\[clamp\(1rem\2c 67\.6vmin\2c 2\.5rem\)\] {
-  margin-top: clamp(1rem,67.6vmin,2.5rem);
-}
-
-.mt-\[clamp\(1rem\2c 7\.6vmin\2c 2\.5rem\)\] {
-  margin-top: clamp(1rem,7.6vmin,2.5rem);
-}
-
-.mt-\[clamp\(0\.76rem\2c 7\.6vmin\2c 2\.5rem\)\] {
-  margin-top: clamp(0.76rem,7.6vmin,2.5rem);
+.mt-\[clamp\(2rem\2c 20vmin\2c 10rem\)\] {
+  margin-top: clamp(2rem,20vmin,10rem);
 }
 
 .line-clamp-2 {
@@ -760,14 +731,6 @@ video {
 
 .h-1 {
   height: 0.25rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .h-\[2px\] {
@@ -856,28 +819,12 @@ video {
   width: 80%;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-44 {
   width: 11rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
 .w-\[31\%\] {
   width: 31%;
-}
-
-.w-\[31\.5rem\] {
-  width: 31.5rem;
 }
 
 .w-\[65\%\] {
@@ -1005,10 +952,6 @@ video {
   justify-content: space-between;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-\[clamp\(0\.1rem\2c 1vmin\2c 0\.25rem\)\] {
   gap: clamp(0.1rem,1vmin,0.25rem);
 }
@@ -1061,36 +1004,16 @@ video {
   gap: clamp(1.8rem,18vmin,10rem);
 }
 
+.gap-\[clamp\(1rem\2c 6vmin\2c 2rem\)\] {
+  gap: clamp(1rem,6vmin,2rem);
+}
+
 .gap-\[clamp\(1rem\2c 7vmin\2c 3rem\)\] {
   gap: clamp(1rem,7vmin,3rem);
 }
 
 .gap-\[clamp\(2rem\2c 20vmin\2c 10rem\)\] {
   gap: clamp(2rem,20vmin,10rem);
-}
-
-.gap-48 {
-  gap: 12rem;
-}
-
-.gap-\[clamp\(1rem\2c 6vmin\2c 2rem\)\] {
-  gap: clamp(1rem,6vmin,2rem);
-}
-
-.gap-\[10\] {
-  gap: 10;
-}
-
-.gap-\[10\%\] {
-  gap: 10%;
-}
-
-.gap-\[\] {
-  gap: ;
-}
-
-.gap-\[5\%\] {
-  gap: 5%;
 }
 
 .gap-x-\[2px\] {
@@ -1282,10 +1205,6 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -1355,14 +1274,6 @@ video {
   padding: max(2px,1vh);
 }
 
-.p-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
-  padding: clamp(0.32rem,3.2vmin,1rem);
-}
-
-.p-\[clamp\(0\.16rem\2c 1\.6vmin\2c 0\.5rem\)\] {
-  padding: clamp(0.16rem,1.6vmin,0.5rem);
-}
-
 .px-\[1\.5vmin\] {
   padding-left: 1.5vmin;
   padding-right: 1.5vmin;
@@ -1386,6 +1297,11 @@ video {
 .px-\[clamp\(0\.2rem\2c 2vmin\2c 1rem\)\] {
   padding-left: clamp(0.2rem,2vmin,1rem);
   padding-right: clamp(0.2rem,2vmin,1rem);
+}
+
+.px-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
+  padding-left: clamp(0.3rem,2vmin,1rem);
+  padding-right: clamp(0.3rem,2vmin,1rem);
 }
 
 .px-\[clamp\(0\.4rem\2c 4vmin\2c 1\.25rem\)\] {
@@ -1438,6 +1354,11 @@ video {
   padding-bottom: clamp(0.07rem,1vmin,0.5rem);
 }
 
+.py-\[clamp\(0\.16rem\2c 1\.6vmin\2c 0\.5rem\)\] {
+  padding-top: clamp(0.16rem,1.6vmin,0.5rem);
+  padding-bottom: clamp(0.16rem,1.6vmin,0.5rem);
+}
+
 .py-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
   padding-top: clamp(0.3rem,2vmin,1rem);
   padding-bottom: clamp(0.3rem,2vmin,1rem);
@@ -1453,71 +1374,12 @@ video {
   padding-bottom: clamp(1rem,10vmin,3rem);
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.py-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
-  padding-top: clamp(0.32rem,3.2vmin,1rem);
-  padding-bottom: clamp(0.32rem,3.2vmin,1rem);
-}
-
-.py-\[clamp\(0\.32rem\2c 3\.2vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.32rem,3.2vmin,0.5rem);
-  padding-bottom: clamp(0.32rem,3.2vmin,0.5rem);
-}
-
-.py-\[clamp\(0\.32rem\2c 1\.2vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.32rem,1.2vmin,0.5rem);
-  padding-bottom: clamp(0.32rem,1.2vmin,0.5rem);
-}
-
-.py-\[clamp\(0\.32rem\2c 1\.vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.32rem,1.vmin,0.5rem);
-  padding-bottom: clamp(0.32rem,1.vmin,0.5rem);
-}
-
-.py-\[clamp\(0\.32rem\2c 1\.7vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.32rem,1.7vmin,0.5rem);
-  padding-bottom: clamp(0.32rem,1.7vmin,0.5rem);
-}
-
-.py-\[clamp\(0\.32rem\2c 1\.6vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.32rem,1.6vmin,0.5rem);
-  padding-bottom: clamp(0.32rem,1.6vmin,0.5rem);
-}
-
-.py-\[clamp\(0\.16rem\2c 1\.6vmin\2c 0\.5rem\)\] {
-  padding-top: clamp(0.16rem,1.6vmin,0.5rem);
-  padding-bottom: clamp(0.16rem,1.6vmin,0.5rem);
-}
-
-.px-\[10\%\] {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.px-\[\] {
-  padding-left: ;
-  padding-right: ;
-}
-
-.px-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
-  padding-left: clamp(0.3rem,2vmin,1rem);
-  padding-right: clamp(0.3rem,2vmin,1rem);
-}
-
 .pb-\[clamp\(1rem\2c 8\.5vmin\2c 4rem\)\] {
   padding-bottom: clamp(1rem,8.5vmin,4rem);
 }
 
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
+.pl-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
+  padding-left: clamp(0.32rem,3.2vmin,1rem);
 }
 
 .pt-\[1\.5vmin\] {
@@ -1530,22 +1392,6 @@ video {
 
 .pt-\[clamp\(1rem\2c 6vmax\2c 5rem\)\] {
   padding-top: clamp(1rem,6vmax,5rem);
-}
-
-.pl-\[\] {
-  padding-left: ;
-}
-
-.pl-\[clamp\(0\.4rem\2c 4vmin\2c 1\.25rem\)\] {
-  padding-left: clamp(0.4rem,4vmin,1.25rem);
-}
-
-.pl-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
-  padding-left: clamp(0.32rem,3.2vmin,1rem);
-}
-
-.pb-\[clamp\(0\.16rem\2c 1\.6vmin\2c 0\.5rem\)\] {
-  padding-bottom: clamp(0.16rem,1.6vmin,0.5rem);
 }
 
 .text-left {
@@ -1614,15 +1460,6 @@ video {
 
 .text-\[clamp\(9px\2c 2\.3vmin\2c 20px\)\] {
   font-size: clamp(9px,2.3vmin,20px);
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-\[clamp\(0\.4rem\2c 4vmin\2c 1\.125rem\)\] {
-  font-size: clamp(0.4rem,4vmin,1.125rem);
 }
 
 .font-bold {
@@ -1849,11 +1686,6 @@ video {
   .max-lg\:justify-end {
     justify-content: flex-end;
   }
-
-  .max-lg\:px-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
-    padding-left: clamp(0.3rem,2vmin,1rem);
-    padding-right: clamp(0.3rem,2vmin,1rem);
-  }
 }
 
 @media not all and (min-width: 768px) {
@@ -1883,10 +1715,6 @@ video {
     height: 200%;
   }
 
-  .max-sm\:flex-col {
-    flex-direction: column;
-  }
-
   .max-sm\:flex-col-reverse {
     flex-direction: column-reverse;
   }
@@ -1913,11 +1741,6 @@ video {
 
   .max-sm\:object-top {
     object-position: top;
-  }
-
-  .max-sm\:px-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
-    padding-left: clamp(0.3rem,2vmin,1rem);
-    padding-right: clamp(0.3rem,2vmin,1rem);
   }
 
   .max-sm\:px-\[clamp\(1rem\2c 6vmin\2c 5rem\)\] {
@@ -1951,10 +1774,6 @@ video {
 
   .sm\:flex-\[2\] {
     flex: 2;
-  }
-
-  .sm\:gap-\[clamp\(1\.8rem\2c 18vmin\2c 10rem\)\] {
-    gap: clamp(1.8rem,18vmin,10rem);
   }
 
   .sm\:gap-\[5\%\] {
@@ -2004,10 +1823,6 @@ video {
     width: 20rem;
   }
 
-  .md\:w-11\/12 {
-    width: 91.666667%;
-  }
-
   .md\:gap-\[10\%\] {
     gap: 10%;
   }
@@ -2018,27 +1833,13 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:w-10\/12 {
-    width: 83.333333%;
-  }
-
   .lg\:flex-col {
     flex-direction: column;
-  }
-
-  .lg\:py-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
-    padding-top: clamp(0.3rem,2vmin,1rem);
-    padding-bottom: clamp(0.3rem,2vmin,1rem);
   }
 
   .lg\:px-\[clamp\(1rem\2c 6vmin\2c 5rem\)\] {
     padding-left: clamp(1rem,6vmin,5rem);
     padding-right: clamp(1rem,6vmin,5rem);
-  }
-
-  .lg\:px-\[clamp\(0\.3rem\2c 2vmin\2c 1rem\)\] {
-    padding-left: clamp(0.3rem,2vmin,1rem);
-    padding-right: clamp(0.3rem,2vmin,1rem);
   }
 }
 
