@@ -1,30 +1,40 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
 const ConfirmModal = ({ open, message, onConfirm, onCancel }) => {
-  return (
+  const [visible, setVisible] = useState(open);
+
+  useEffect(() => {
+    if (open) {
+      setVisible(true);
+    } else {
+      const timeout = setTimeout(() => {
+        setVisible(false);
+      }, 150);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [open]);
+
+  return visible ? (
     <div
       className={`
-        fixed inset-0 backdrop-blur-sm bg-black/40 z-[60]
+        fixed inset-0 z-[60] backdrop-blur-sm bg-black/40
         flex items-center justify-center
         transition-all duration-200 
-        ${
-          open
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }
+        ${open ? "animate-fadeIn" : "animate-fadeOut"}
       `}
     >
+      <div onClick={onCancel} className="absolute inset-0"></div>
       <div
         className={`
-          bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)]
+          bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)] z-[70]
           transition-all duration-200
-          ${open ? "scale-100 opacity-100" : "scale-90 opacity-0"}
+          ${open ? "animate-scaleIn" : "animate-scaleOut"}
         `}
       >
         <p className="text-[#454545] text-[clamp(0.4rem,4vmin,1.25rem)]">
           {message}
         </p>
-
         <div className="mt-[clamp(0.4rem,4vmin,1.5rem)] flex justify-end gap-[clamp(0.2rem,2vmin,0.625rem)]">
           <button
             onClick={onCancel}
@@ -42,7 +52,7 @@ const ConfirmModal = ({ open, message, onConfirm, onCancel }) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export { ConfirmModal };
