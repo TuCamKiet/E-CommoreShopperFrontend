@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import kids_banner from "../Components/Assets/kids_banner.png";
 import men_banner from "../Components/Assets/men_banner.png";
 import women_banner from "../Components/Assets/women_banner.png";
-import { GridTemplate } from "../Components/Popular/GridTemplate";
+import { GridTemplate } from "../Components/GridTemplate";
 
 const ShopCategory = (props) => {
   const { demo_data } = useContext(ShopContext);

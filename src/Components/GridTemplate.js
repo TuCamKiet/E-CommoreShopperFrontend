@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { Item } from "../Item/Item";
+import { Item } from "./Item";
 
 const GridTemplate = (props) => {
   const containerRef = useRef(null);

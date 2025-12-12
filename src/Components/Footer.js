@@ -1,7 +1,7 @@
 import React from "react";
 import shopping_bag from "../Assets/shopping_bag.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ZaloSvg } from "../Assets/ZaloSvg";
+import { ZaloSvg } from "./Assets/ZaloSvg";
 
 const Footer = () => {
   const footer_links_li = "cursor-pointer";

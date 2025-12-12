@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GridTemplate } from "../Popular/GridTemplate";
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../Context/ShopContext";
 
 const NewCollections = () => {
   const { demo_data } = useContext(ShopContext);
