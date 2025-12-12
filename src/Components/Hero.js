@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import hero_img from "../Assets/hero_img.png";
+import hero_img from "./Assets/hero_img.png";
 
 const Hero = () => {
   const hero_left_p =

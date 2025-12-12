@@ -1,5 +1,5 @@
 import React from "react";
-import shopping_bag from "../Assets/shopping_bag.png";
+import shopping_bag from "./Assets/shopping_bag.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ZaloSvg } from "./Assets/ZaloSvg";
 

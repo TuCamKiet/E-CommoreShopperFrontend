@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
-import shopping_bag from "../Assets/shopping_bag.png";
+import shopping_bag from "./Assets/shopping_bag.png";
 import { ShopContext } from "../Context/ShopContext";
 
 const Navbar = () => {
