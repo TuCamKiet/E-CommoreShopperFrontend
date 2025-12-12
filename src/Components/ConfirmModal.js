@@ -17,20 +17,15 @@ const ConfirmModal = ({ open, message, onConfirm, onCancel }) => {
 
   return visible ? (
     <div
-      className={`
-        fixed inset-0 z-[60] backdrop-blur-sm bg-black/40
-        flex items-center justify-center
-        transition-all duration-200 
-        ${open ? "animate-fadeIn" : "animate-fadeOut"}
-      `}
+      className={`fixed inset-0 z-[60] backdrop-blur-sm bg-black/40 flex items-center justify-center ${
+        open ? "animate-fadeIn" : "animate-fadeOut"
+      }`}
     >
       <div onClick={onCancel} className="absolute inset-0"></div>
       <div
-        className={`
-          bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)] z-[70]
-          transition-all duration-200
-          ${open ? "animate-scaleIn" : "animate-scaleOut"}
-        `}
+        className={` bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)] z-[70] ${
+          open ? "animate-scaleIn" : "animate-scaleOut"
+        }`}
       >
         <p className="text-[#454545] text-[clamp(0.4rem,4vmin,1.25rem)]">
           {message}
