@@ -17,42 +17,37 @@ const CartItems = () => {
   }, [cartItems, demo_data]);
 
   const [errorsQuantities, setErrorsQuantities] = useState({});
-  const handleQuantityChange = (itemId, e) => {
-    const value = e.target.value;
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
-    if (!/^\d*$/.test(value)) {
-      setErrorsQuantities((prev) => ({
-        ...prev,
-        [itemId]: "Enter only positive integers",
-      }));
-      return;
-    }
+  /*  Sao ko delete trực tiếp mà cần new obj ?
+  Vì React không nhận ra thay đổi state nếu bạn mutate trực tiếp object cũ.
+  
+  Đây là một trong những “luật cứng” của React:
+  ➡️ State phải được cập nhật bằng cách tạo ra một object mới (immutable update).
+  ➡️ Nếu bạn sửa trực tiếp object cũ → React sẽ không re - render.
+   ai vì:
+  
+   prev và state mới cùng reference trong memory
+  
+   React so sánh => không thấy state khác đi
+  
+   → Không re-render UI
+  
+   → Remove button không hoạt động hoặc UI không cập nhật*/
+  const handleQuantityRemove = (itemId) => {
+    setCartItems((prev) => {
+      const newQuantities = { ...prev };
+      delete newQuantities[itemId];
+      return newQuantities;
+    });
 
-    const numeric = Number(value);
+    setErrorsQuantities((prev) => {
+      const newErrorsQuantities = { ...prev };
+      delete newErrorsQuantities[itemId];
+      return newErrorsQuantities;
+    });
 
-    if (numeric < 0) {
-      setErrorsQuantities((prev) => ({
-        ...prev,
-        [itemId]: "Minimum value is 0",
-      }));
-      return;
-    }
-
-    if (numeric > 20) {
-      setErrorsQuantities((prev) => ({
-        ...prev,
-        [itemId]: "Maximum value is 20",
-      }));
-      return;
-    }
-
-    if (numeric === 0) {
-      setConfirmOpen(true);
-      return;
-    }
-
-    setErrorsQuantities((prev) => ({ ...prev, [itemId]: null }));
-    setCartItems((prev) => ({ ...prev, [itemId]: numeric }));
+    setConfirmOpen(false);
   };
 
   const handleQuantityIncrease = (itemId) => {
@@ -92,36 +87,43 @@ const CartItems = () => {
     setCartItems((prev) => ({ ...prev, [itemId]: value }));
   };
 
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  /*  Sao ko delete trực tiếp mà cần new obj ?
-  Vì React không nhận ra thay đổi state nếu bạn mutate trực tiếp object cũ.
-  
-  Đây là một trong những “luật cứng” của React:
-  ➡️ State phải được cập nhật bằng cách tạo ra một object mới (immutable update).
-  ➡️ Nếu bạn sửa trực tiếp object cũ → React sẽ không re - render.
-   ai vì:
-  
-   prev và state mới cùng reference trong memory
-  
-   React so sánh => không thấy state khác đi
-  
-   → Không re-render UI
-  
-   → Remove button không hoạt động hoặc UI không cập nhật*/
-  const handleQuantityRemove = (itemId) => {
-    setCartItems((prev) => {
-      const newQuantities = { ...prev };
-      delete newQuantities[itemId];
-      return newQuantities;
-    });
+  const handleQuantityChange = (itemId, e) => {
+    const type = e.type;
+    const value = e.target.value;
 
-    setErrorsQuantities((prev) => {
-      const newErrorsQuantities = { ...prev };
-      delete newErrorsQuantities[itemId];
-      return newErrorsQuantities;
-    });
+    if (!/^\d*$/.test(value)) {
+      setErrorsQuantities((prev) => ({
+        ...prev,
+        [itemId]: "Enter only positive integers",
+      }));
+      return;
+    }
 
-    setConfirmOpen(false);
+    let numeric = Number(value);
+
+    if (numeric < 0) {
+      setErrorsQuantities((prev) => ({
+        ...prev,
+        [itemId]: "Minimum value is 0",
+      }));
+      return;
+    }
+
+    if (numeric > 20) {
+      setErrorsQuantities((prev) => ({
+        ...prev,
+        [itemId]: "Maximum value is 20",
+      }));
+      return;
+    }
+
+    if (type === "blur" && numeric === 0) {
+      setConfirmOpen(true);
+      numeric = 1;
+    }
+
+    setErrorsQuantities((prev) => ({ ...prev, [itemId]: null }));
+    setCartItems((prev) => ({ ...prev, [itemId]: numeric }));
   };
 
   const subtotal = useMemo(() => {
@@ -202,6 +204,7 @@ const CartItems = () => {
                           inputMode="numeric"
                           className="cartitems-quantity sm:w-[clamp(0.8rem,8vmin,2.5rem)] w-[clamp(0.72rem,7.2vmin,2.25rem)] sm:mx-[clamp(0.2rem,2vmin,0.625rem)] border-[#ebebeb] bg-[#fff] text-center outline-none"
                           onChange={(e) => handleQuantityChange(itemId, e)}
+                          onBlur={(e) => handleQuantityChange(itemId, e)}
                         />
                         <FontAwesomeIcon
                           icon="fa-solid fa-plus"
