@@ -213,6 +213,12 @@ const CartItems = () => {
                             ⚠ {errorsQuantities[itemId]}
                           </div>
                         )}
+                        <ConfirmModal
+                          open={confirmOpen}
+                          message="Are you sure you want to remove this item?"
+                          onConfirm={() => handleQuantityRemove(itemId)}
+                          onCancel={() => setConfirmOpen(false)}
+                        />
                       </div>
                     </td>
                     <td>${new_price * quantity}</td>
@@ -223,12 +229,6 @@ const CartItems = () => {
                         onClick={() => setConfirmOpen(true)}
                       />
                     </td>
-                    <ConfirmModal
-                      open={confirmOpen}
-                      message="Are you sure you want to remove this item?"
-                      onConfirm={() => handleQuantityRemove(itemId)}
-                      onCancel={() => setConfirmOpen(false)}
-                    />
                   </tr>
                 );
               }

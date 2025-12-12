@@ -1,12 +1,30 @@
 import React from "react";
 
 const ConfirmModal = ({ open, message, onConfirm, onCancel }) => {
-  return open ? (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[60]">
-      <div className="bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)] w-fit">
+  return (
+    <div
+      className={`
+        fixed inset-0 backdrop-blur-sm bg-black/40 z-[60]
+        flex items-center justify-center
+        transition-all duration-200 
+        ${
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }
+      `}
+    >
+      <div
+        className={`
+          bg-white rounded-xl shadow-xl p-[clamp(0.4rem,4vmin,1.5rem)]
+          transition-all duration-200
+          ${open ? "scale-100 opacity-100" : "scale-90 opacity-0"}
+        `}
+      >
         <p className="text-[#454545] text-[clamp(0.4rem,4vmin,1.25rem)]">
           {message}
         </p>
+
         <div className="mt-[clamp(0.4rem,4vmin,1.5rem)] flex justify-end gap-[clamp(0.2rem,2vmin,0.625rem)]">
           <button
             onClick={onCancel}
@@ -24,8 +42,6 @@ const ConfirmModal = ({ open, message, onConfirm, onCancel }) => {
         </div>
       </div>
     </div>
-  ) : (
-    ""
   );
 };
 
