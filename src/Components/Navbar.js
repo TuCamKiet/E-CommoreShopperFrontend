@@ -6,7 +6,7 @@ import { ShopContext } from "../Context/ShopContext";
 
 const Navbar = () => {
   const { cartItems } = useContext(ShopContext);
-  const [menu, setMenu] = useState("shop");
+  const [menu, setMenu] = useState(null);
   let location = useLocation();
 
   useEffect(() => {
