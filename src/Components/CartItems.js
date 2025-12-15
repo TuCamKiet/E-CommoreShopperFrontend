@@ -144,7 +144,7 @@ const CartItems = () => {
     <div className="cartitems flex flex-col px-[5%] pt-[clamp(1rem,6vmax,5rem)] gap-[clamp(1.8rem,18vmin,10rem)]">
       <table className="cartitems-format-main w-full items-center text-center text-balance text-[#454545] gap-[clamp(0.2rem,2vmin,0.625rem)]">
         <thead>
-          <tr className="sm:text-[clamp(0.4rem,4vmin,1.5rem)] text-[clamp(0.4rem,4vmin,1.25rem)] font-semibold border-[#e2e2e2] border-b-[clamp(0.1rem,1vmin,0.25rem)]">
+          <tr className="text-[clamp(0.4rem,4vmin,1.5rem)] max-sm:hidden font-semibold border-[#e2e2e2] border-b-[clamp(0.1rem,1vmin,0.25rem)]">
             <th style={{ width: "8%" }}>Product</th>
             <th style={{ width: "32%" }}>Title</th>
             <th style={{ width: "15%" }}>Price</th>
@@ -161,9 +161,9 @@ const CartItems = () => {
                   <tr
                     key={i}
                     id={itemId}
-                    className="cartitems-format sm:text-[clamp(0.4rem,4vmin,1.25rem)] text-[clamp(0.32rem,3.2vmin,1rem)] font-medium border-b-[clamp(0.05rem,0.5vmin,0.125rem)]"
+                    className="cartitems-format max-sm:flex text-[clamp(0.4rem,4vmin,1.25rem)] font-medium border-b-[clamp(0.05rem,0.5vmin,0.125rem)]"
                   >
-                    <td>
+                    <td className="max-sm:flex-1">
                       <Link
                         onClick={() =>
                           window.scrollTo({ top: 0, behavior: "smooth" })
@@ -178,20 +178,68 @@ const CartItems = () => {
                         />
                       </Link>
                     </td>
-                    <td>
-                      <Link
-                        onClick={() =>
-                          window.scrollTo({ top: 0, behavior: "smooth" })
-                        }
-                        style={{ textDecoration: "none" }}
-                        to={`/product/${itemId}`}
-                        className="line-clamp-2"
-                      >
-                        {name}
-                      </Link>
+                    <td className="max-sm:flex-[4] max-sm:flex max-sm:flex-col max-sm:justify-around">
+                      <div className="max-sm:flex max-sm:text-left max-sm:text-wrap">
+                        <Link
+                          onClick={() =>
+                            window.scrollTo({ top: 0, behavior: "smooth" })
+                          }
+                          style={{ textDecoration: "none" }}
+                          to={`/product/${itemId}`}
+                          className="line-clamp-2"
+                        >
+                          {name}
+                        </Link>
+                        <div className="sm:hidden pr-[clamp(0.2rem,2vmin,0.5rem)] pl-[clamp(0.4rem,4vmin,1rem)]">
+                          ${new_price}
+                        </div>
+                      </div>
+                      <div className="sm:hidden flex w-10/12 justify-between">
+                        <div>
+                          <div className="flex flex-nowrap w-fit mx-auto items-center justify-center relative pl-[clamp(0.2rem,2vmin,0.5rem)]">
+                            <FontAwesomeIcon
+                              icon="fa-solid fa-minus"
+                              className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
+                              onClick={() => handleQuantityDecrease(itemId)}
+                            />
+                            <input
+                              value={quantity}
+                              type="text"
+                              inputMode="numeric"
+                              className="cartitems-quantity sm:w-[clamp(0.8rem,8vmin,2.5rem)] w-[clamp(0.72rem,7.2vmin,2.25rem)] sm:mx-[clamp(0.2rem,2vmin,0.625rem)] border-[#ebebeb] bg-[#fff] text-center outline-none"
+                              onChange={(e) => handleQuantityChange(itemId, e)}
+                              onBlur={(e) => handleQuantityChange(itemId, e)}
+                            />
+                            <FontAwesomeIcon
+                              icon="fa-solid fa-plus"
+                              className="cursor-pointer bg-[#454545] text-white rounded sm:size-[clamp(0.4rem,4vmin,1.25rem)] size-[clamp(0.32rem,3.2vmin,1rem)] py-[1%] px-[2%]"
+                              onClick={() => handleQuantityIncrease(itemId)}
+                            />
+                            {errorsQuantities[itemId] && (
+                              <div className="absolute top-full left-0 mt-[3%] bg-red-100 text-red-700 text-[clamp(0.28rem,2.8vmin,0.875rem)] py-[1.5%] px-[5%] rounded shadow-md whitespace-nowrap z-40">
+                                ⚠ {errorsQuantities[itemId]}
+                              </div>
+                            )}
+                            <ConfirmModal
+                              open={confirmOpen}
+                              message="Are you sure you want to remove this item?"
+                              onConfirm={() => handleQuantityRemove(itemId)}
+                              onCancel={() => setConfirmOpen(false)}
+                            />
+                          </div>
+                        </div>
+                        <div>${new_price * quantity}</div>
+                        <div>
+                          <FontAwesomeIcon
+                            icon="fa-solid fa-trash-can"
+                            className="cartitems-remove-icon cursor-pointer mx-auto"
+                            onClick={() => setConfirmOpen(true)}
+                          />
+                        </div>
+                      </div>
                     </td>
-                    <td>${new_price}</td>
-                    <td>
+                    <td className="max-sm:hidden">${new_price}</td>
+                    <td className="max-sm:hidden">
                       <div className="flex flex-nowrap w-fit mx-auto items-center justify-center relative">
                         <FontAwesomeIcon
                           icon="fa-solid fa-minus"
@@ -224,8 +272,8 @@ const CartItems = () => {
                         />
                       </div>
                     </td>
-                    <td>${new_price * quantity}</td>
-                    <td>
+                    <td className="max-sm:hidden">${new_price * quantity}</td>
+                    <td className="max-sm:hidden">
                       <FontAwesomeIcon
                         icon="fa-solid fa-trash-can"
                         className="cartitems-remove-icon cursor-pointer mx-auto"

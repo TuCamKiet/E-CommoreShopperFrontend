@@ -1484,8 +1484,20 @@ video {
   padding-bottom: clamp(1rem,8.5vmin,4rem);
 }
 
+.pl-\[clamp\(0\.2rem\2c 2vmin\2c 0\.5rem\)\] {
+  padding-left: clamp(0.2rem,2vmin,0.5rem);
+}
+
 .pl-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
   padding-left: clamp(0.32rem,3.2vmin,1rem);
+}
+
+.pl-\[clamp\(0\.4rem\2c 4vmin\2c 1rem\)\] {
+  padding-left: clamp(0.4rem,4vmin,1rem);
+}
+
+.pr-\[clamp\(0\.2rem\2c 2vmin\2c 0\.5rem\)\] {
+  padding-right: clamp(0.2rem,2vmin,0.5rem);
 }
 
 .pt-\[1\.5vmin\] {
@@ -1506,10 +1518,6 @@ video {
 
 .text-\[clamp\(0\.28rem\2c 2\.8vmin\2c 0\.875rem\)\] {
   font-size: clamp(0.28rem,2.8vmin,0.875rem);
-}
-
-.text-\[clamp\(0\.32rem\2c 3\.2vmin\2c 1rem\)\] {
-  font-size: clamp(0.32rem,3.2vmin,1rem);
 }
 
 .text-\[clamp\(0\.4rem\2c 4vmin\2c 1\.25rem\)\] {
@@ -1838,12 +1846,28 @@ video {
     z-index: 1;
   }
 
+  .max-sm\:flex {
+    display: flex;
+  }
+
   .max-sm\:hidden {
     display: none;
   }
 
   .max-sm\:h-\[200\%\] {
     height: 200%;
+  }
+
+  .max-sm\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .max-sm\:flex-\[4\] {
+    flex: 4;
+  }
+
+  .max-sm\:flex-col {
+    flex-direction: column;
   }
 
   .max-sm\:flex-col-reverse {
@@ -1858,12 +1882,20 @@ video {
     justify-content: center;
   }
 
+  .max-sm\:justify-around {
+    justify-content: space-around;
+  }
+
   .max-sm\:gap-x-\[2vw\] {
     column-gap: 2vw;
   }
 
   .max-sm\:overflow-hidden {
     overflow: hidden;
+  }
+
+  .max-sm\:text-wrap {
+    text-wrap: wrap;
   }
 
   .max-sm\:object-cover {
@@ -1879,6 +1911,10 @@ video {
     padding-right: clamp(1rem,6vmin,5rem);
   }
 
+  .max-sm\:text-left {
+    text-align: left;
+  }
+
   .max-sm\:text-center {
     text-align: center;
   }
@@ -1892,6 +1928,10 @@ video {
   .sm\:mx-\[clamp\(0\.2rem\2c 2vmin\2c 0\.625rem\)\] {
     margin-left: clamp(0.2rem,2vmin,0.625rem);
     margin-right: clamp(0.2rem,2vmin,0.625rem);
+  }
+
+  .sm\:hidden {
+    display: none;
   }
 
   .sm\:size-\[clamp\(0\.4rem\2c 4vmin\2c 1\.25rem\)\] {
@@ -1925,14 +1965,6 @@ video {
 
   .sm\:pt-\[clamp\(0\.5rem\2c 3vmax\2c 2\.5rem\)\] {
     padding-top: clamp(0.5rem,3vmax,2.5rem);
-  }
-
-  .sm\:text-\[clamp\(0\.4rem\2c 4vmin\2c 1\.25rem\)\] {
-    font-size: clamp(0.4rem,4vmin,1.25rem);
-  }
-
-  .sm\:text-\[clamp\(0\.4rem\2c 4vmin\2c 1\.5rem\)\] {
-    font-size: clamp(0.4rem,4vmin,1.5rem);
   }
 
   .sm\:leading-normal {
