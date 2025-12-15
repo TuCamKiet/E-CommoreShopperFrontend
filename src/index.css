@@ -1866,6 +1866,14 @@ video {
     flex: 4;
   }
 
+  .max-sm\:flex-\[4\.5\] {
+    flex: 4.5;
+  }
+
+  .max-sm\:flex-\[3\.5\] {
+    flex: 3.5;
+  }
+
   .max-sm\:flex-col {
     flex-direction: column;
   }

@@ -178,7 +178,7 @@ const CartItems = () => {
                         />
                       </Link>
                     </td>
-                    <td className="max-sm:flex-[4] max-sm:flex max-sm:flex-col max-sm:justify-around">
+                    <td className="max-sm:flex-[3.5] max-sm:flex max-sm:flex-col max-sm:justify-around">
                       <div className="max-sm:flex max-sm:text-left max-sm:text-wrap">
                         <Link
                           onClick={() =>
